@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete
+@model List<AnaSayfaKisim3>
+
+<div class="row">
+    <div class="col-lg-12 text-center appear-animation" data-appear-animation="fadeInUpShorter">
+        <h2 class="font-weight-normal text-6 mb-5"><strong class="font-weight-extra-bold">@*@Html.Raw(@ViewBag.baslik)*@Müşteri  Değerlendirmesi</strong></h2>
+    </div>
+</div>
+
+<div class="row">
+    @foreach (var a in Model)
+    {
+        <div class="col-lg-6 mb-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="300">
+            <div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote testimonial-quotes-dark mb-0">
+                <div class="testimonial-author">
+                    <img src="~/StaticFiles/Front/img/clients/client-1.jpg" class="img-fluid rounded-circle mb-0" alt="">
+                </div>
+                <blockquote>
+                    <p class="text-color-dark mb-0">@Html.Raw(@a.Icerik)</p>
+                </blockquote>
+                <div class="testimonial-author">
+                    <p><strong class="font-weight-extra-bold text-color-dark text-4">@Html.Raw(@a.Baslik)</strong></p>
+                    <p>@Html.Raw(@a.AltBaslik)</p>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

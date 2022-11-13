@@ -1,0 +1,66 @@
+﻿@using EntityLayer.Concrete
+@model List<Referanslar>
+
+<style>
+	.owl-referans {
+		display: flex;
+		justify-content: center;
+	}
+
+	@@media only screen and (max-width: 992px) {
+		.owl-referans {
+			display: block;
+		}
+	}
+</style>
+<div class="row pt-4 mt-5">
+	<div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter">
+		<h2 class="font-weight-normal text-6"><strong class="font-weight-extra-bold">Referanslarımız</strong></h2>
+	</div>
+</div>
+<div class="row pb-4 mb-5">
+	<div class="col appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+		<div class="owl-carousel owl-theme mb-0 owl-loaded owl-drag owl-carousel-init" data-plugin-options="{'items': 3, 'margin': 0, 'loop': false}" style="height: auto;">
+			<div class="owl-stage-outer owl-referans">
+				<div class="owl-stage ">
+					@foreach (var a in Model)
+					{
+						<div class="owl-item active" style="width: 279px; display: flex; justify-content: center; align-items: center; height: 200px;">
+							<div>
+								<a href="~/Home/ReferansDetay/@a.Referanslar_id" class="text-decoration-none" target="_blank">
+									<img src="~/Resimler/Referanslar/@a.Referanslar_resim_yol" class="img-fluid px-2" alt="">
+								</a>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+

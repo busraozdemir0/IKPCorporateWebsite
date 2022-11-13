@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete
+@model List<EndustriAkilliFabrika>
+
+<div class="tabs tabs-dark mb-4 pb-2">
+    <ul class="nav nav-tabs">
+        <li class="nav-item"><button id="popular" class="nav-link show active text-1 font-weight-bold text-uppercase" style="outline:none;" data-bs-toggle="tab">Diğer Çözümlerimiz</button></li>
+    </ul>
+    <div class="tab-content">
+        @foreach (var item in Model)
+        {
+            <div class="tab-pane active" id="popularPosts">
+                <ul class="simple-post-list">
+                    <li>
+                        <div class="post-image">
+                            <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                                <a href="/Home/EndustriAkilliFabrika/@item.EndustriAkilliFabrika_id">
+                                    <img src="~/Resimler/EndustriAkilliFabrika/@item.EndustriAkilliFabrika_resim_yol" width="50" height="50" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="post-info">
+                            <a href="/Home/EndustriAkilliFabrika/@item.EndustriAkilliFabrika_id">@Html.Raw(@item.EndustriAkilliFabrika_isim)</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        }
+    </div>
+</div>

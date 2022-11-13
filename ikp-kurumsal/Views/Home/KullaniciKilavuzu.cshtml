@@ -1,0 +1,70 @@
+﻿@{
+	ViewData["Title"] = "KullaniciKilavuzu";
+	Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+
+}
+
+<div class="body">
+	<div role="main" class="main">
+		<section class="page-header page-header-modern bg-color-light-scale-1 page-header-lg">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 align-self-center p-static order-2 text-center">
+						@*                            <h1 class="font-weight-bold text-dark">Left Sidebar</h1>
+						*@
+					</div>
+					<div class="col-md-12 align-self-center order-1">
+						<ul class="breadcrumb d-block text-center">
+							<li><a href="#">Anasayfa</a></li>
+							<li class="active">Kullanıcı Klavuzu</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="container pt-3 pb-2">
+
+			<div class="row pt-2">
+				<div class="col-lg-3 order-2 order-lg-1 mt-4 mt-lg-0">
+					<aside class="sidebar" id="menu-container">
+						@await Component.InvokeAsync("KullaniciKlavuzuMenuListesi")
+					</aside>
+				</div>
+				<div class="col-lg-9 order-1 order-lg-2">
+
+					<h2 class="font-weight-normal text-7 mb-2" id="baslik"><strong class="font-weight-extra-bold"></strong></h2>
+					<div id="icerik"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section footer{
+
+<script>
+	$(".menu").click(function() {
+	 $(this).parent().find("ul").eq(0).toggle()
+	});
+
+	$(".menu").click(function() {
+	let selectedId = $(this).attr("value")
+	fetchKullaniciKilavuzData(selectedId)
+	})
+
+	$(document).ready(function(){
+  	 var defaultId=$("#menu-container").find(".menu").eq(0).attr("value");
+	 fetchKullaniciKilavuzData(defaultId)
+	})
+
+	function fetchKullaniciKilavuzData(id){
+		$.post("@Url.Action("KullaniciKlavuz","Home")", { id: id })
+			.then(data => {
+				$("#icerik").empty()
+				$("#baslik").text(data.baslik)
+				$("#icerik").append(data.icerik)
+		 })
+	}
+</script>
+}

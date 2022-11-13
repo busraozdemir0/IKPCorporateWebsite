@@ -1,0 +1,76 @@
+﻿@using EntityLayer.Concrete
+@using ikp_kurumsal.Extensions
+@model List<Haber>
+
+
+   
+                                    <div class="datatables-header-footer-wrapper mt-2">
+                                        <div class="datatable-header">
+                                            <div class="row align-items-center mb-3">
+                                                <div class="col-12 col-lg-auto mb-3 mb-lg-0">
+                                                    <button id="hideshow" class="btn btn-primary btn-md font-weight-semibold btn-py-2 px-4">+ Haber Ekle</button>
+                                                </div>
+                                                <div class="col-8 col-lg-auto ms-auto ml-auto mb-3 mb-lg-0">
+                                                    <div class="d-flex align-items-lg-center flex-column flex-lg-row">
+                                                        <label class="ws-nowrap me-3 mb-0">Filter By:</label>
+                                                        <select class="form-control select-style-1 filter-by" name="filter-by">
+                                                            <option value="all" selected>All</option>
+                                                            <option value="1">ID</option>
+                                                            <option value="2">Company Name</option>
+                                                            <option value="3">Slug</option>
+                                                            <option value="4">Parent Category</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4 col-lg-auto ps-lg-1 mb-3 mb-lg-0">
+                                                    <div class="d-flex align-items-lg-center flex-column flex-lg-row">
+                                                        <label class="ws-nowrap me-3 mb-0">Show:</label>
+                                                        <select class="form-control select-style-1 results-per-page" name="results-per-page">
+                                                            <option value="12" selected>12</option>
+                                                            <option value="24">24</option>
+                                                            <option value="36">36</option>
+                                                            <option value="100">100</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-auto ps-lg-1">
+                                                    <div class="search search-style-1 search-style-1-lg mx-lg-auto">
+                                                        <div class="input-group">
+                                                            <input type="text" class="search-term form-control" name="search-term" id="search-term" placeholder="Search Category">
+                                                            <button class="btn btn-default" type="submit"><i class="bx bx-search"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table table-ecommerce-simple table-striped mb-0" id="datatable-ecommerce-list" style="min-width: 550px;">
+                                            <thead>
+                                                <tr>
+                                                    @*                <th><input type="checkbox" name="select-all" class="select-all checkbox-style-1 p-relative top-2" value="" /></th>
+                                                    *@
+                                                    <th hidden>ID</th>
+                                                    <th>Haber konu başlık</th>
+                                                    <th>içerik</th>
+                                                    <th>resim</th>
+                                                    <th>Düzenle</th>
+                                                    <th>Sil</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var i in Model)
+                                                {
+                                                    <tr>
+                                                        <td hidden>@i.Haber_id</td>
+                                                        <td>@Html.Raw(@i.Haber_isim)</td>
+                                                        <td>@Html.Raw(@i.Haber_icerik.TrimString(20))</td>
+                                                        <td><img src="~/Resimler/Haberler/@i.Haber_resim_yol" style="width:20%;" /></td>
+                                                        <td><a href="/SY/Yonetim/HaberDuzenle/@i.Haber_id" class="edit-button btn btn-info btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1">Düzenle</a></td>
+                                                        <td><a href="/SY/Yonetim/HaberSil/@i.Haber_id" class="delete-button btn btn-danger btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1">Sil</a></td>
+
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                        <hr class="solid mt-5 opacity-4">
+                                    </div>
+                     

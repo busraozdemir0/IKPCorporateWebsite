@@ -1,0 +1,44 @@
+﻿        @using EntityLayer.Concrete
+        @model List<IsBasvuruTbl>
+        <div class="col-lg-6 col-xl-3">
+
+                    <section class="card mb-3">
+                        <header class="card-header">
+                            <div class="card-actions">
+                                <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                                <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                            </div>
+
+                            <h2 class="card-title">
+                                @*<span class="badge badge-primary font-weight-normal va-middle p-2 me-e">298</span>*@
+                                <span class="va-middle">İş Arayanlar</span>
+                            </h2>
+                        </header>
+                        <div class="card-body">
+                            <div class="content">
+                                <ul class="simple-user-list">
+                                     @foreach(var i in Model)
+                                        {
+                                    <li>
+                                        <figure class="image rounded">
+                                            <img src="img/!sample-user.jpg" alt="" class="rounded-circle">
+                                        </figure>
+                                        <span class="title">@i.AppUser.namesurname</span>
+                                        <span class="message truncate">@i.AppUser.Email</span>
+                                    </li>
+                                    }
+                                </ul>
+                                <hr class="dotted short">
+                                <div class="text-end">
+                                    <a class="text-uppercase text-muted" href="#">Hepsini Gör</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="s" id="s" placeholder="Search...">
+                                <button class="btn btn-default" type="submit"><i class="bx bx-search"></i></button>
+                            </div>
+                        </div>
+                    </section>
+                </div>

@@ -1,0 +1,109 @@
+﻿@model EntityLayer.Concrete.isilanlari
+@{
+    ViewData["Title"] = "IsIlaniEkle";
+    Layout = "~/Views/Shared/Layout/IsVeren/_Layout.cshtml";
+}
+				
+<!doctype html>
+<html class="modern fixed has-top-menu has-left-sidebar-half">
+	<body>
+		<section class="body">
+			<!-- start: header -->
+			<!-- end: header -->
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				
+				<!-- end: sidebar -->
+				<section role="main" class="content-body content-body-modern mt-0">
+					<header class="page-header page-header-left-inline-breadcrumb">
+						<h2 class="font-weight-bold text-6">İş İlanı Ekle</h2>
+						<div class="right-wrapper">
+							<ol class="breadcrumbs">
+								<li><span>İş İlanları</span></li>
+							</ol>
+							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+						</div>
+					</header>
+					 <div class="row">
+                    <div class="col">
+                        <section class="card card-modern card-big-info">
+                            <div class="card-body">
+                                <div class="row">
+									@await Component.InvokeAsync("isverenisilaniListele") 
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+                </div>
+					<!-- start: page -->
+					<form class="ecommerce-form action-buttons-fixed" action="#" method="post" enctype="multipart/form-data">
+
+						<div class="gizgos" style="display:none;">
+						<div class="row">
+							<div class="col">
+								<section class="card card-modern card-big-info">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-lg-3-5 col-xl-4-5">
+												<div class="form-group row align-items-center mb-3">
+													<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">iş Başlık</label>
+													<div class="col-lg-7 col-xl-6">
+													 @Html.DropDownListFor(x => x.DilTablosuId,(List<SelectListItem>)ViewBag.dil, new { @class = "form-control", id="SinifSelectBox"} )
+
+													</div>
+												</div>
+												<div class="form-group row align-items-center mb-3">
+													<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">iş Başlık</label>
+													<div class="col-lg-7 col-xl-6">
+														<textarea id="editor1" type="text" class="form-control form-control-modern" name="Baslik" value="" required></textarea>
+													</div>
+												</div>
+												<div class="form-group row align-items-center mb-3">
+													<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">İş Tanımı</label>
+													<div class="col-lg-7 col-xl-6">
+														<textarea id="editor2" type="text" class="form-control form-control-modern" name="Aciklama" value="" required></textarea>
+													</div>
+												</div>
+												<div class="form-group row align-items-center mb-3">
+													<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">İş Adresi</label>
+													<div class="col-lg-7 col-xl-6">
+														<textarea id="editor3" type="text" class="form-control form-control-modern" name="IsYeriAdres" value="" required></textarea>
+													</div>
+												</div>
+										</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="row action-buttons">
+							<div class="col-12 col-md-auto">
+								<button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+									<i class="bx bx-save text-4 me-2"></i> Kaydet
+								</button>
+							</div>		
+						</div>
+						<script>
+							CKEDITOR.config.autoParagraph = false;
+							CKEDITOR.replace("editor1");
+							CKEDITOR.replace("editor2");
+							CKEDITOR.replace("editor3");
+
+                            $(document).ready(function () {
+                                $("#hideshow").click(function () {
+                                    $(".gizgos").slideToggle("slow")
+                                });
+
+                            });
+						</script>
+					</form>
+					<!-- end: page -->
+				</section>
+			</div>
+		</section>
+	
+	</body>
+</html>
+
+

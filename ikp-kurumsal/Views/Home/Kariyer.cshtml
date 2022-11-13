@@ -1,0 +1,76 @@
+﻿@using EntityLayer.Concrete
+@model List<Kariyer>
+@{
+    ViewData["Title"] = "Kariyer";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+<div role="main" class="main" style="background-color:#fff">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md ">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-12 align-self-center p-static order-2 text-center">
+                            <div class="overflow-hidden pb-2">
+                                <h1 class="text-dark font-weight-bold text-9 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="100">Kariyer</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-12 align-self-center order-1">
+                            <ul class="breadcrumb d-block text-center appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                                <li><a href="#">Anasayfa</a></li>
+                                <li class="active">Karıyer</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </section>
+    <div class="container py-2">
+        <div class="row mt-3 pt-2">
+            <div class="col-lg-3 order-2 order-lg-1">
+                <aside class="sidebar">
+                    @await Html.PartialAsync("/Views/Home/FilterBy.cshtml")
+
+                   @await Component.InvokeAsync("KariyerSon3Listele")
+
+@*                    <h5 class="font-weight-semi-bold pt-4">About Us</h5>
+                  <p>Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero. Nulla nunc dui, tristique in semper vel. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero.</p>
+                  *@
+                </aside>
+            </div>
+            <div class="col-lg-9 order-1 order-lg-2">
+                <div class="sort-destination-loader sort-destination-loader-showing">
+                    <div class="row portfolio-list sort-destination" data-sort-id="portfolio">
+                        @foreach (var i in Model)
+                        {
+                            <div class="col-md-6 col-lg-4 isotope-item websites">
+                                <div class="portfolio-item">
+                                    <a href="~/Home/KariyerDetay/@i.Kariyer_id">
+                                        <span class="thumb-info thumb-info-lighten border-radius-0">
+                                            <span class="thumb-info-wrapper border-radius-0">
+                                                <img src="~/Resimler/KariyerResim/@i.Kariyer_resim_yol" class="img-fluid border-radius-0" alt="">
+                                                <span class="thumb-info-title">
+                                                    <span class="thumb-info-inner">@Html.Raw(@i.Kariyer_Konu_baslik)</span>
+                                                    @* <span class="thumb-info-type">Website</span>
+                                                *@
+                                                </span>
+                                                <span class="thumb-info-action">
+                                                    <span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

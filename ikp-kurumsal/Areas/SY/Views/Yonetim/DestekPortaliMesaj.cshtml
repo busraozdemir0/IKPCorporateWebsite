@@ -1,0 +1,122 @@
+﻿@using EntityLayer.Concrete
+@model List<DestekIletisim>
+@{
+    ViewData["Title"] = "DestekPortaliMesaj";
+    Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+<!doctype html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<html class="modern fixed has-top-menu has-left-sidebar-half">
+
+<section role="main" class="content-body content-body-modern mt-0">
+    <header class="page-header page-header-left-inline-breadcrumb">
+
+        <div class="right-wrapper">
+            <ol class="breadcrumbs">
+                <li><span>Home</span></li>
+
+                <li><span>eCommerce</span></li>
+
+                <li><span>Categories</span></li>
+            </ol>
+            <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+        </div>
+    </header>
+    <!-- start: page -->
+    <form class="ecommerce-form action-buttons-fixed" action="#" method="post" enctype="multipart/form-data">
+        <div class="gizgos" ">
+            <div class="row">
+                <div class="col">
+                    <section class="card card-modern card-big-info">
+                        <div class="card-body">
+                            <div class="row">
+                                <h2>Destek Portalı Gelen Kutusu</h2>
+                                <br />
+                                <table class="table">
+                                    <tr>
+                                        <th hidden scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Mail</th>
+                                        <th scope="col">Konu</th>
+                                        <th scope="col">Mesajı Gör</th>
+                                        <th scope="col">Sil</th>
+                                    </tr>
+                                    @foreach (var i in Model)
+                                    {
+                                    <tr>
+                                        <th hidden scope="row">@i.id</th>
+                                        <td>@i.isim</td>
+                                        <td>@i.mail</td>
+                                        <td>@i.konu</td>
+                                        <td><a href="#" class="btn btn-primary btnDetay">Detay</a>
+                                        <td><a href="/SY/Yonetim/DestekMesajSil/@i.id" class="btn btn-danger">Sil</a>
+                                    </tr>
+                                     <div id="myModal" class="modal " role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="mb-2 modal-title">@i.konu</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="m-0 modal-acilklama">@i.mesaj</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <input type="submit" class="btn btn-primary btnClose" Value="Kapat" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    }
+                                </table>
+                               
+                                <script>
+                                    $(document).ready(function () {
+                                        $(".btnDetay").click(function () {
+                                            var aciklama = $(this).attr("data-aciklama")
+                                            $(".modal-acilklama").text(aciklama)
+                                            var baslik = $(this).attr("data-baslik")
+                                            $(".modal-title").text(baslik)
+                                            $("#myModal").modal("show");
+                                        });
+
+                                        $(".btnClose").click(function () {
+                                            $("#myModal").modal("hide");
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- end: page -->
+</section>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

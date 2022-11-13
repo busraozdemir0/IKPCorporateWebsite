@@ -1,0 +1,17 @@
+﻿@model List<EntityLayer.Concrete.DilTablosu>
+
+@foreach (var i in Model)
+{
+    <a class="dropdown-item " onclick="dilsecenegi(@i.Id)" href="javascript:void(0)"><img src="" class="flag flag-us" alt="English" /> @i.DilAdi</a>
+}
+
+<script>
+    function dilsecenegi(id){
+        $.post("@Url.Action("DilSessionId","Home")", { id })
+            .then(function() {
+                location.reload()
+            })
+
+            
+    }
+</script>

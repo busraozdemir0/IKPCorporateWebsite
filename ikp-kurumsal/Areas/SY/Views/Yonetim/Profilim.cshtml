@@ -1,0 +1,136 @@
+﻿@model ikp_kurumsal.Areas.SY.Models.KullaniciGuncelleDto
+
+@{
+    ViewData["Title"] = "Profilim";
+    Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+
+<!doctype html>
+<html class="fixed">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <title>Basic Forms | Porto Admin - Responsive HTML5 Template</title>
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/animate/animate.compat.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/boxicons/css/boxicons.min.css" />
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/StaticFiles/css/theme.css" />
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="~/StaticFiles/css/skins/default.css" />
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="~/StaticFiles/css/custom.css">
+
+    <!-- Head Libs -->
+    <script src="~/StaticFiles/Front/vendor/modernizr/modernizr.js"></script>
+
+</head>
+<body>
+    <section class="body">
+        <div class="inner-wrapper">
+            <section role="main" class="content-body card-margin">
+            
+                <!-- start: page -->
+                <div class="row">
+                    <div class="col">
+                        <section class="card" style="top:-85px">
+                            <header class="card-header">
+                                <div class="card-actions">
+                                    <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                                    <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                                </div>
+
+                                <h2 class="card-title">Profil Ayarları</h2>
+                            </header>
+                            <div class="card-body">
+                                <form class="form-horizontal form-bordered" method="post">
+                                    <div class="form-group row pb-4">
+                                        <label class="col-lg-3 control-label text-lg-end pt-2">Adı Soyadı: </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="namesurname" value="@Model.namesurname">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row pb-4">
+                                        <label class="col-lg-3 control-label text-lg-end pt-2">Kullanıcı Adı: </label>
+                                        <div class="col-lg-6">
+                                            <input class="form-control" type="text" name="username" value="@Model.username">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row pb-4">
+                                        <label class="col-lg-3 control-label text-lg-end pt-2">E-Mail: </label>
+                                        <div class="col-lg-6">
+                                            <input class="form-control" type="text" name="email" value="@Model.email">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row pb-4">
+                                        <label class="col-lg-3 control-label text-lg-end pt-2">Şifre: </label>
+                                        <div class="col-lg-6">
+                                            <input type="password" class="form-control" name="password" value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row pb-4">
+                                        <div class="col-lg-6" style="text-align:center;">
+                                            <button type="submit" class="btn btn-primary">Güncelle</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </section>
+
+    <!-- Vendor -->
+    <script src="~/StaticFiles/Front/vendor/jquery/jquery.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="~/StaticFiles/Front/vendor/popper/umd/popper.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/StaticFiles/Front/vendor/common/common.js"></script>
+    <script src="~/StaticFiles/Front/vendor/nanoscroller/nanoscroller.js"></script>
+    <script src="~/StaticFiles/Front/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+    <!-- Specific Page Vendor -->
+    <script src="~/StaticFiles/Front/vendor/autosize/autosize.js"></script>
+    <script src="~/StaticFiles/Front/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/StaticFiles/js/theme.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="~/StaticFiles/js/custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/StaticFiles/js/theme.init.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿@using EntityLayer.Concrete
+@model List<Iletisim>
+
+
+@foreach (var i in Model)
+{
+    <div class="col-md-12  appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="800" data-plugin-options="{'accY': -200}">
+        <h4 class="pt-5" style="color: #0088cc">Genel <strong style="color: #0088cc">Müdürlük</strong></h4>
+        <ul class="list list-icons list-icons-style-3 mt-2">
+            <li>
+                <i class="fas fa-map-marker-alt top-6"></i> <strong>Adres:</strong>@*BOSB Mah. Birlik San. Sit. 3.Cad.
+            Birlik 1 İş Merkezi Kat:7 Ofis:130
+            Beylikdüzü / İSTANBUL*@
+                @Html.Raw(@i.Iletisim_Adresimiz)
+            </li>
+            <li><i class="fas fa-phone top-6"></i> <strong>Telefon:</strong>@Html.Raw(@i.Iletisim_Telefon_numaramiz)</li>@*0850 532 32 88*@
+            <li><i class="fas fa-envelope top-6"></i> <strong>Email:</strong> <a href="bilgi@sonel.com.tr">@Html.Raw(@i.Iletisim_Email_Adresimiz)</a></li>@*bilgi@sonel.com.tr*@
+        </ul>
+    </div>
+    <div class="col-md-12  appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="800" data-plugin-options="{'accY': -200}">
+        <h4 class="pt-5" style="color: #0088cc">Düzce <strong style="color: #0088cc">Arge Merkezi</strong></h4>
+        <ul class="list list-icons list-icons-style-3 mt-2">
+            <li><i class="fas fa-map-marker-alt top-6"></i> <strong>Adres:</strong>@Html.Raw(@i.Arge_Iletisim_Adres)</li>@*Orhangazi Mahallesi, Teknopark Caddesi, No:1  Kat:1 ,Ofis:124 Merkez / DÜZCE*@
+            <li><i class="fas fa-phone top-6"></i> <strong>Telefon:</strong>@Html.Raw(@i.Arge_Iletisim_Telefon)</li> @*0212 611 08 00*@
+            <li><i class="fas fa-envelope top-6"></i> <strong>Email:</strong> <a href="arge@sonel.com.tr">@Html.Raw(@i.Arge_Iletisim_Email)</a></li>@*arge@sonel.com.tr*@
+        </ul>
+    </div>
+    <div class="col-md-12 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500" data-plugin-options="{'accY': -200}">
+        <h4 class="pt-5" style="color: #0088cc">Çalışma <strong style="color: #0088cc">Saatleri</strong></h4>
+        <ul class="list list-icons list-dark mt-2">
+            <li><i class="far fa-clock top-6"></i> Pazartesi-Cuma  9.00-18.00</li>
+            <li><i class="far fa-clock top-6"></i>Cumartesi-Pazar  Kapalı</li>
+
+        </ul>
+    </div>
+}

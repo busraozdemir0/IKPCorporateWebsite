@@ -1,0 +1,86 @@
+﻿@using EntityLayer.Concrete
+@model List<Iletisim>
+@{
+    ViewData["Title"] = "İletisim";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+<div role="main" class="main" style="background-color:#fff">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-lg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="font-weight-bold text-dark">İletişim</h1>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb d-block text-center">
+                        <li><a href="index">Anasayfa</a></li>
+                        <li class="active">Iletişim</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="row">
+        <div class="container py-4">
+            <div class="row mb-2 col-md-7 float-left">
+                <div class="col">
+                    <h2 class="font-weight-bold text-7 mt-2 mb-0 "style="padding-top: 20px; color: #0088cc">İletişim</h2>
+                    <p class="mb-4"></p>
+                       <form class="contact-form-recaptcha-v3" action="" method="post">
+                        <div class="contact-form-success alert alert-success d-none mt-4">
+                            <strong>Başarılı!</strong> Mesajınız gönderildi.
+                        </div>
+                        <div class="contact-form-error alert alert-danger d-none mt-4">
+                            <strong>Hata!</strong>Mesaj gönderilirken hata oluştu.
+                            <span class="mail-error-message text-1 d-block"></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <label class="form-label mb-1 text-2">Ad Soyad</label>
+                                <input type="text" value="" data-msg-required="Lütfen adınızı giriniz." maxlength="100" class="form-control text-3 h-auto py-2" name="iletisim_Ad_Soyad" required>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label class="form-label mb-1 text-2">Email</label>
+                                <input type="email" value="" data-msg-required="Lütfen email adresinizi giriniz." data-msg-email="Lütfen geçerli bir email adresi giriniz." maxlength="100" class="form-control text-3 h-auto py-2" name="Iletisim_Email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col">
+                                <label class="form-label mb-1 text-2">Konu</label>
+                                <input type="text" value="" data-msg-required="Lütfen mesaj konusunu giriniz." maxlength="100" class="form-control text-3 h-auto py-2" name="Iletisim_Konu" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col">
+                                <label class="form-label mb-1 text-2">Mesaj</label>
+                                <textarea maxlength="5000" data-msg-required="Lütfen mesajınızı giriniz" rows="5" class="form-control text-3 h-auto py-2" name="Iletisim_Mesaj" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col">
+                                <input type="submit" value="Gönder" class="btn btn-primary btn-modern" data-loading-text="Gönderiliyor...">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row mb-5 col-md-5 float-right">
+               @await Component.InvokeAsync("iletisimbilgileri")
+            </div>
+        </div>
+    </div>
+   
+    <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+    <div id="googlemaps" class="google-map row" style="margin-bottom:0;">                   
+            <div class=" col-md-6 fluid-col" style=" padding: 0;">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.9368203294225!2d28.657550314858653!3d41.00475602759145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabaf216a75bc7%3A0x20c0300f7a44e76c!2zU29uZWwgWWF6xLFsxLFt!5e0!3m2!1str!2str!4v1631519368921!5m2!1str!2str"  
+                          style="border:0; width:100%; height:100% ;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="col-md-6 fluid-col" style="padding: 0;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12062.614871208309!2d31.1722811!3d40.9014103!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x82ffe8c18019050!2sD%C3%BCzce%20Teknopark!5e0!3m2!1str!2str!4v1631865024752!5m2!1str!2str" 
+                        style="border: 0; width:100%; height:100%;" allowfullscreen="" loading="lazy"></iframe>
+            </div>     
+    </div>
+</div>
+ 

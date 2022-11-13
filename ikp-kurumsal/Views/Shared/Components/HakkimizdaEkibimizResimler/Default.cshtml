@@ -1,0 +1,12 @@
+﻿@using EntityLayer.Concrete
+@model List<Hakkimizda>
+<div class="owl-carousel owl-theme nav-style-1 nav-center-images-only stage-margin mb-0" data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 2}, '1200': {'items': 2}}, 'margin': 25, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
+   @foreach(var item in Model)
+   {
+    <div>
+        <img class="img-fluid rounded-0 mb-4" src="~/Resimler/Ekipresim/@item.Hakkimizda_Ekibimiz_Resim_Yol" alt="" />
+      @*  <h3 class="font-weight-bold text-color-dark text-4 mb-0">Robert Doe</h3>
+        <p class="text-2 mb-0">DESIGNER</p>*@
+    </div>
+   }
+</div>

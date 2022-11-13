@@ -1,0 +1,13 @@
+﻿@using EntityLayer.Concrete
+@model List<SurumKilavuzu>
+
+
+<div class="col-md-4 mt-4 mt-md-0">
+    <h4 class="text-primary">Diğer Sürümler</h4>
+    <ul class="nav nav-list flex-column">
+        @foreach (var item in Model)
+        {
+            <li class="nav-item"><a class="nav-link" href="/Home/SurumKilavuzuDetay/@item.SurumKilavuz_Id">@Html.Raw(item.SurumKilavuz_Baslik)</a></li>
+        }
+    </ul>
+</div>

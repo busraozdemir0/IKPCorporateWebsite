@@ -1,0 +1,71 @@
+﻿@using ikp_kurumsal.Areas.SY.Models
+@model SosyalMedyaLinkDto
+
+@{
+    ViewData["Title"] = "SosyalMedyaLink";
+    Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+<div>
+    <!-- start: sidebar -->
+    <!-- end: sidebar -->
+    <section role="main" class="content-body content-body-modern mt-0">
+        <header class="page-header page-header-left-inline-breadcrumb">
+            <h2 class="font-weight-bold text-6">Footer Düzenle</h2>
+        </header>
+
+        <!-- start: page -->
+        <form method="post">
+
+            <div class="row">
+                <div class="col">
+                    <section class="card card-modern card-big-info">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12-9 col-xl-13-7">
+                                    <div class="row">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div hidden class="form-group row align-items-center mb-3">
+                                                    <label class="col-lg-4 col-xl-2 control-label text-lg-end mb-0">id</label>
+                                                    <div class="col-lg-11 col-xl-10">
+                                                        <input type="text" class="form-control form-control-modern" name="SosyalMedyaLink_id" value="@Model.SosyalMedyaLink_id" required />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center mb-3">
+                                                    <label class="col-lg-4 col-xl-2 control-label text-lg-end mb-0">İnstagram Link</label>
+                                                    <div class="col-lg-11 col-xl-10">
+                                                        <input type="text" class="form-control form-control-modern" name="InstagramLink" value="@Model.InstagramLink" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center mb-3">
+                                                    <label class="col-lg-4 col-xl-2 control-label text-lg-end mb-0">Twitter Link</label>
+                                                    <div class="col-lg-11 col-xl-10">
+                                                        <input type="text" class="form-control form-control-modern" name="TwitterLink" value="@Model.TwitterLink" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center mb-3">
+                                                    <label class="col-lg-4 col-xl-2 control-label text-lg-end mb-0">Facebook Link</label>
+                                                    <div class="col-lg-11 col-xl-10">
+                                                        <input type="text" class="form-control form-control-modern" name="FacebookLink" value="@Model.FacebookLink" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row action-buttons">
+                <div class="col-12 col-md-auto">
+                    <button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+                        Kaydet
+                    </button>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>

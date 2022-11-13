@@ -1,0 +1,37 @@
+﻿@model List<EntityLayer.Concrete.KMenu>
+@{
+    int counter=0;
+    void RenderName(int? parentId)
+    {
+        counter++;
+        string visible = "";
+        if (counter>2)
+        {
+            visible = "display:none;";
+        }
+        //else if(parentId !=0 && parentId !=null)
+        //{
+        //    visible = "display:visible;";
+        //}
+        <ul class="nav nav-list flex-column ml-3" style="@visible">
+            @foreach (var item in Model.Where(x => x.KUstMenuId == parentId).ToList())
+            {
+                <li class="nav-item ">
+                    <a class="nav-link active menu" style="cursor:pointer" value="@item.Id">@item.MenuName</a>
+                    @if (Model.Where(x => x.KUstMenuId == item.Id).Count() > 0)
+                    {
+                    RenderName(item.Id);
+                    }
+                </li>
+            }
+        </ul>
+    }
+}
+
+
+<aside class="sidebar">
+    <h5 class="font-weight-semi-bold pt-4">Kullanıcı Kılavuzu</h5>
+    @{
+        RenderName(null);
+    }
+</aside>

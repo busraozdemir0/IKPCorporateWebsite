@@ -1,0 +1,37 @@
+﻿@using EntityLayer.Concrete
+  @model HakkimizdaGuncelBilgiler
+
+  <section class="section section-primary border-0 mb-0 appear-animation" data-appear-animation="fadeIn" data-plugin-options="{'accY': -150}">
+        <div class="container">
+            <div class="row counters counters-sm pb-4 pt-3">
+                <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
+                    <div class="counter">
+                        <i class="icons icon-user text-color-light"></i>
+                        <strong class="text-color-light font-weight-extra-bold" data-to="@Model.Icerik1" data-append="+"></strong>
+                        <label class="text-4 mt-1 text-color-light">@Model.Baslik1</label>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
+                    <div class="counter">
+                        <i class="icons icon-people text-color-light"></i>
+                        <strong class="text-color-light font-weight-extra-bold" data-to="@Model.Icerik2"></strong>
+                        <label class="text-4 mt-1 text-color-light">@Model.Baslik2</label>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-5 mb-sm-0">
+                    <div class="counter">
+                        <i class="icons icon-graph text-color-light"></i>
+                        <strong class="text-color-light font-weight-extra-bold" data-to="@Model.Icerik3"></strong>
+                        <label class="text-4 mt-1 text-color-light">@Model.Baslik3</label>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="counter">
+                        <i class="icons icon-docs text-color-light"></i>
+                        <strong class="text-color-light font-weight-extra-bold" data-to="@Model.Icerik4"></strong>
+                        <label class="text-4 mt-1 text-color-light">@Model.Baslik4</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

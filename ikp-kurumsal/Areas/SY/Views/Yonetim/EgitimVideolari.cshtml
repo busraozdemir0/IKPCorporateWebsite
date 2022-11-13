@@ -1,0 +1,145 @@
+﻿@using EntityLayer.Concrete
+@model EgitimVideolari
+
+@{
+    ViewData["Title"] = "EgitimVideolari";
+    Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+
+<!doctype html>
+<html class="modern fixed has-top-menu has-left-sidebar-half">
+<body>
+    <section class="body">
+        <!-- start: header -->
+        <!-- end: header -->
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <!-- end: sidebar -->
+            <section role="main" class="content-body content-body-modern mt-0">
+                <header class="page-header page-header-left-inline-breadcrumb">
+
+                    <div class="right-wrapper">
+                        <ol class="breadcrumbs">
+                            <li><span>Home</span></li>
+
+                            <li><span>eCommerce</span></li>
+
+                            <li><span>Categories</span></li>
+                        </ol>
+                        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+                    </div>
+                </header>
+                <div class="row">
+                    <div class="col">
+                        <section class="card card-modern card-big-info">
+                            <div class="card-body">
+                                <div class="row">
+                                    @await Component.InvokeAsync("EgitimVideolariListele")
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+                </div>
+                <!-- start: page -->
+                <form class="ecommerce-form action-buttons-fixed" action="#" method="post" enctype="multipart/form-data">       
+
+                    <div class="gizgos" style="display:none;">
+                        <div class="row">
+                            <div class="col">
+                                <section class="card card-modern card-big-info">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-12-9 col-xl-13-7">
+
+                                                <div class="row">
+                                                    <div class="col-sm-7 mb-4">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                 <div class="form-group row align-items-center mb-3">
+                                                                    <label class="col-lg-4 col-xl-2 control-label text-lg-end mb-0">Dil</label>
+                                                                    <div class="col-lg-11 col-xl-10">
+                                                                        @Html.DropDownListFor(x => x.DilTablosuId, (List<SelectListItem>)ViewBag.dil, new { @class = "form-control", id = "SinifSelectBox" })
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row align-items-center mb-3">
+                                                                    <label class="col-lg-4 col-xl-2 control-label text-lg-end mb-0">Kategori</label>
+                                                                    <div class="col-lg-11 col-xl-10">
+                                                                        @Html.DropDownListFor(x => x.VideoKategoriID, (List<SelectListItem>)ViewBag.kategoriler, new { @class = "form-control", id = "SinifSelectBox" })
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row align-items-center mb-3">
+                                                                    <label class="col-lg-4 col-xl-2 control-label text-lg-end mb-0">Eğitim Videoları Başlık</label>
+                                                                    <div class="col-lg-11 col-xl-10">
+                                                                        <textarea id="editor1" type="text" class="form-control form-control-modern" name="EgitimVideo_Baslik" value="" required></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                 <div class="form-group row align-items-center mb-3">
+                                                                    <label class="col-lg-4 col-xl-2 control-label text-lg-end mb-0">İçerik</label>
+                                                                    <div class="col-lg-11 col-xl-10">
+                                                                        <textarea id="editor3" type="text" class="form-control form-control-modern" name="VideoAciklama" value="" required></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row align-items-center mb-3">
+                                                                    <label class="col-lg-4 col-xl-2 control-label text-lg-end mb-0">Video Yol</label>
+                                                                    <div class="col-lg-11 col-xl-10">
+                                                                        <textarea id="editor2" type="text" class="form-control form-control-modern" name="EgitimVideo_Yol" value="" required></textarea>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5" style="margin-top:800px">
+
+                                                        <label>YouTube'dan eklemek istediğimiz videonun linkini kopyalarken "=" olan kısmına kadar alınacak.</label>
+                                                        <img class="card-img-top" src="~/Resimler/EgitimVideolariResim/egitimvideoUrl.jpg" alt="Card image cap">
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row action-buttons">
+                            <div class="col-12 col-md-auto">
+                                <button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+                                    <i class="bx bx-save text-4 me-2"></i> Kaydet
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <script>
+                        CKEDITOR.config.autoParagraph = false;
+                        CKEDITOR.replace("editor1");
+                        CKEDITOR.replace("editor2");
+                        CKEDITOR.replace("editor3");
+
+
+                        $(document).ready(function () {
+                            $("#hideshow").click(function () {
+                                $(".gizgos").slideToggle("slow")
+                            });
+
+                        });
+                    </script>
+                </form>
+                <!-- end: page -->
+            </section>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
+
+
+
+

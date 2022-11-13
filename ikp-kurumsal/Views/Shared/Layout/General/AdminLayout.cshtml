@@ -1,0 +1,534 @@
+﻿
+<!doctype html>
+<html class="modern fixed has-top-menu has-left-sidebar-half">
+<head>
+	<!-- Basic -->
+	<meta charset="UTF-8">
+	<title>IKP Admin Paneli</title>
+	<meta name="keywords" content="HTML5 Admin Template" />
+	<meta name="description" content="Porto Admin - Responsive HTML5 Template">
+	<meta name="author" content="okler.net">
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!-- Web Fonts  -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,600,700,800,900" rel="stylesheet" type="text/css">
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="~/StaticFiles/General/vendor/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" href="~/StaticFiles/General/vendor/animate/animate.compat.css">
+	<link rel="stylesheet" href="~/StaticFiles/General/vendor/font-awesome/css/all.min.css" />
+	<link rel="stylesheet" href="~/StaticFiles/General/vendor/boxicons/css/boxicons.min.css" />
+	<link rel="stylesheet" href="~/StaticFiles/General/vendor/magnific-popup/magnific-popup.css" />
+	<link rel="stylesheet" href="~/StaticFiles/General/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+	<link rel="stylesheet" href="~/StaticFiles/General/vendor/jquery-ui/jquery-ui.css" />
+	<link rel="stylesheet" href="~/StaticFiles/General/vendor/jquery-ui/jquery-ui.theme.css" />
+	<link rel="stylesheet" href="~/StaticFiles/General/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css" />
+	<link rel="stylesheet" href="~/StaticFiles/General/vendor/morris/morris.css" />
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="~/StaticFiles/General/css/theme.css" />
+	<!-- Theme Layout -->
+	<link rel="stylesheet" href="~/StaticFiles/General/css/layouts/modern.css" />
+	<!-- Skin CSS -->
+	<link rel="stylesheet" href="~/StaticFiles/General/css/skins/default.css" />
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="~/StaticFiles/General/css/custom.css">
+	<!-- Head Libs -->
+	<script src="~/StaticFiles/General/vendor/modernizr/modernizr.js"></script>
+	<script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"> </script>
+
+	@RenderSection("header",false)
+
+</head>
+<body>
+	<section class="body">
+		<!-- start: header -->
+		<header class="header header-nav-menu header-nav-links">
+			<div class="logo-container">
+				<a href="../" class="logo">
+					<img src="~/StaticFiles/General/img/logo-modern.png" class="logo-image" width="90" height="24" alt="Porto Admin" /><img src="~/StaticFiles/General/img/logo-default.png" class="logo-image-mobile" width="90" height="41" alt="Porto Admin" />
+				</a>
+				<button class="btn header-btn-collapse-nav d-lg-none" data-bs-toggle="collapse" data-bs-target=".header-nav">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+			<div class="header-right">
+				@*<a class="btn search-toggle d-none d-md-inline-block d-xl-none" data-toggle-class="active" data-target=".search"><i class="bx bx-search"></i></a>
+					<form action="pages-search-results.html" class="search search-style-1 nav-form d-none d-xl-inline-block">
+					<div class="input-group">
+					<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+					<button class="btn btn-default" type="submit"><i class="bx bx-search"></i></button>
+					</div>
+					</form>*@
+				@*<span class="separator"></span>
+
+					<ul class="notifications">
+					<li>
+					<a href="#" class="dropdown-toggle notification-icon" data-bs-toggle="dropdown">
+					<i class="bx bx-task"></i>
+					<span class="badge">3</span>
+					</a>
+					<div class="dropdown-menu notification-menu large">
+					<div class="notification-title">
+					<span class="float-end badge badge-default">3</span>
+					Tasks
+					</div>
+					<div class="content">
+					<ul>
+					<li>
+					<p class="clearfix mb-1">
+					<span class="message float-start">Generating Sales Report</span>
+					<span class="message float-end text-dark">60%</span>
+					</p>
+					<div class="progress progress-xs light">
+					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+					</div>
+					</li>
+					<li>
+					<p class="clearfix mb-1">
+					<span class="message float-start">Importing Contacts</span>
+					<span class="message float-end text-dark">98%</span>
+					</p>
+					<div class="progress progress-xs light">
+					<div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
+					</div>
+					</li>
+					<li>
+					<p class="clearfix mb-1">
+					<span class="message float-start">Uploading something big</span>
+					<span class="message float-end text-dark">33%</span>
+					</p>
+					<div class="progress progress-xs light mb-1">
+					<div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
+					</div>
+					</li>
+					</ul>
+					</div>
+					</div>
+					</li>
+					<li>
+					<a href="#" class="dropdown-toggle notification-icon" data-bs-toggle="dropdown">
+					<i class="bx bx-envelope"></i>
+					<span class="badge">4</span>
+					</a>
+					<div class="dropdown-menu notification-menu">
+					<div class="notification-title">
+					<span class="float-end badge badge-default">230</span>
+					Messages
+					</div>
+
+					</div>
+					</li>
+
+					</ul>*@
+				<span class="separator"></span>
+				@await Component.InvokeAsync("AdminLayoutIsim")
+
+			</div>
+			<!-- end: search & user box -->
+		</header>
+		<!-- end: header -->
+		<div class="inner-wrapper">
+			<!-- start: sidebar -->
+			<aside id="sidebar-left" class="sidebar-left">
+				<div class="sidebar-header">
+					<div class="sidebar-toggle d-none d-md-flex" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+						<i class="fas fa-bars" aria-label="Toggle sidebar"></i>
+					</div>
+				</div>
+				<div class="nano">
+					<div class="nano-content">
+						<nav id="menu" class="nav-main" role="navigation">
+							<ul class="nav nav-main">
+								<li>
+									<a class="nav-link" href="/SY/Yonetim/Dashboard/">
+										<i class="bx bx-home-alt" aria-hidden="true"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
+
+
+								<li class="nav-parent">
+									<a class="nav-link" href="#">
+										<i class="bx bx-envelope" aria-hidden="true"></i>
+										<span>Mailbox</span>
+									</a>
+									<ul class="nav nav-children">
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/IletisimKutusu/">
+												- Gelen Kutusu
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/DestekPortaliMesaj/">
+												- Destek Portalı Gelen Kutusu
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a class="nav-link" href="/SY/Yonetim/IsIlanlariListele/">
+										<i class="bx bx-task" aria-hidden="true"></i>
+										<span>İş İlanları</span>
+									</a>
+								</li>
+								<li class="nav-parent">
+									<a class="nav-link" href="#">
+										<i class="bx bx-layout" aria-hidden="true"></i>
+										<span>Anasayfa</span>
+									</a>
+									<ul class="nav nav-children">
+										<li class="nav-parent">
+											<a class="nav-link" href="#">
+												<span>Anasayfa</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/AnasayfaMenu/">
+														- Anasayfa Menü Ekle
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/AnasayfaAltMenu/">
+														- Anasayfa alt Menü Ekle
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/Logo/">
+														- Logo Ekle
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/SosyalMedyaLink/">
+														- Sosyal Medya Link
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/SliderEkle/">
+														- Kısım 1
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/CozumlerimizEkle/">
+														- Kısım 2
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/MusterilerimizEkle/">
+														- Kısım 3
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/PortfolyoEkle/">
+														- Kısım 4 (PASİF DURUMDA)
+													</a>
+
+												</li>
+											</ul>
+										</li>
+										<li class="nav-parent">
+											<a class="nav-link" href="#">
+												<span>Hakkımızda</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/Musterilerimizhkk/">
+														- Müşterilerimiz
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/HakkimizdaEkle/">
+														- Hakkımızda
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/HakkimizdaGuncelBilgiler/">
+														- Hakkımızda Güncel Bilgiler
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/Kariyer/">
+												- Karıyer
+											</a>
+										</li>
+										<li class="nav-parent">
+											<a class="nav-link" href="#">
+												<span>Belgelerimiz</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/BelgeEkle/">
+														- Belgelerimiz
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/BelgeKategoriEkle/">
+														- Belgele Kategori
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-parent">
+											<a class="nav-link" href="#">
+												<span>Arge</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/Arge/">
+														- Arge
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="/SY/Yonetim/ArgeGecmis/">
+														- Arge Gecmisimiz
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/iletisim/">
+												- iletişim
+											</a>
+
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/UretimTakipYonetimi/">
+												- Üretim Takip Yonetimi
+											</a>
+
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/BakimYonetimi/">
+												- Bakim Yönetimi
+											</a>
+
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/EnerjiYonetimi/">
+												- Enerji Yönetimi
+											</a>
+
+										</li>
+
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/KaliteYonetimi/">
+												- Kalite Yönetimi
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/BarkodTakipliStokYonetimiEkle/">
+												- Barkod takip stok yönetimi
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/WebMobileMonitoringEkle/">
+												- Webmobil
+											</a>
+										</li>
+
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/EntegreSistemlerEkle/">
+												- Entegre Sistemler
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/EndustriAkilliFabrika/">
+												-	Endüstri 4.0 Akıllı Fabrika
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/ReferansEkle/">
+												-	Referanslar
+											</a>
+										</li>
+
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/HaberEkle/">
+												- Haberler
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/BlogEkle/">
+												- Bloglar
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/BlogKategoriEkle/">
+												- Blog Kategori
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/DestekPortali/">
+												-	Destek Portalı
+											</a>
+										</li>
+										@* <li>
+											<a class="nav-link" href="/SY/Yonetim/DestekKategoriEkle/">
+											-	Destek Portalı Kategori Ekle
+											</a>
+											</li>*@
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/EgitimVideolari/">
+												-	Egitim Videoları
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/EgitimVideoKategoriEkle/">
+												-	Eğitim Video Kategorileri
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/SurumKilavuzu/">
+												-	Sürüm Kılavuzu
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/SurumKilavuzIcerikEkle/">
+												-	Sürüm Kılavuzu İçerik
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/AltBilgi/">
+												-	Alt Bilgi
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/MailBulteni/">
+												-	Mail Bülteni
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="nav-parent">
+									<a class="nav-link" href="#">
+										<i class="bx bx-layout" aria-hidden="true"></i>
+										<span>Kullanıcı Klavuzu Menüler</span>
+									</a>
+									<ul class="nav nav-children">
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/KullaniciKlavuzuMenu/">
+												Menü Ekle
+											</a>
+										</li>
+										@*  <li>
+											<a class="nav-link" href="/SY/Yonetim/KullaniciKlavuzuAltMenuEkle/">
+											alt Menü Ekle
+											</a>
+											</li>*@
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/KullaniciKlavuzuIcerikEkle/">
+												İçerik Ekle
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="/SY/Yonetim/KullaniciKlavuzuIcerikListesi/">
+												İçerik Listele
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a class="nav-link" href="/SY/Yonetim/SosyalMedya">
+										<i class="bx bx-task" aria-hidden="true"></i>
+										<span>Sosyal Medya Paylaşım</span>
+									</a>
+								</li>
+
+								<li>
+									<a class="nav-link" href="/SY/Yonetim/Profilim/">
+										<i class="bx bx-task" aria-hidden="true"></i>
+										<span>Profilim</span>
+									</a>
+								</li>
+								<li>
+									<a class="nav-link" href="/Home/Index/">
+										<i class="bx bx-home-alt" aria-hidden="true"></i>
+										<span>Siteye Git</span>
+									</a>
+								</li>
+								<li>
+									<a class="nav-link" href="/SY/Giris/LogOut/">
+										<i class="bx bx-log-out" aria-hidden="true"></i>
+										<span>Çıkış</span>
+									</a>
+								</li>
+
+							</ul>
+						</nav>
+					</div>
+					<script>
+						// Maintain Scroll Position
+						if (typeof localStorage !== 'undefined') {
+							if (localStorage.getItem('sidebar-left-position') !== null) {
+								var initialPosition = localStorage.getItem('sidebar-left-position'),
+									sidebarLeft = document.querySelector('#sidebar-left .nano-content');
+								sidebarLeft.scrollTop = initialPosition;
+							}
+						}
+					</script>
+				</div>
+			</aside>
+			@RenderBody()
+		</div>
+
+	</section>
+	<!-- Vendor -->
+	<script src="~/StaticFiles/General/vendor/jquery/jquery.js"></script>
+	<script src="~/StaticFiles/General/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+	<script src="~/StaticFiles/General/vendor/popper/umd/popper.min.js"></script>
+	<script src="~/StaticFiles/General/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="~/StaticFiles/General/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="~/StaticFiles/General/vendor/common/common.js"></script>
+	<script src="~/StaticFiles/General/vendor/nanoscroller/nanoscroller.js"></script>
+	<script src="~/StaticFiles/General/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+	<script src="~/StaticFiles/General/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+	<!-- Specific Page Vendor -->
+	<script src="~/StaticFiles/General/vendor/jquery-ui/jquery-ui.js"></script>
+	<script src="~/StaticFiles/General/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
+	<script src="~/StaticFiles/General/vendor/jquery-appear/jquery.appear.js"></script>
+	<script src="~/StaticFiles/General/vendor/bootstrapv5-multiselect/js/bootstrap-multiselect.js"></script>
+	<script src="~/StaticFiles/General/vendor/jquery.easy-pie-chart/jquery.easypiechart.js"></script>
+	<script src="~/StaticFiles/General/vendor/flot/jquery.flot.js"></script>
+	<script src="~/StaticFiles/General/vendor/flot.tooltip/jquery.flot.tooltip.js"></script>
+	<script src="~/StaticFiles/General/vendor/flot/jquery.flot.pie.js"></script>
+	<script src="~/StaticFiles/General/vendor/flot/jquery.flot.categories.js"></script>
+	<script src="~/StaticFiles/General/vendor/flot/jquery.flot.resize.js"></script>
+	<script src="~/StaticFiles/General/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+	<script src="~/StaticFiles/General/vendor/raphael/raphael.js"></script>
+	<script src="~/StaticFiles/General/vendor/morris/morris.js"></script>
+	<script src="~/StaticFiles/General/vendor/gauge/gauge.js"></script>
+	<script src="~/StaticFiles/General/vendor/snap.svg/snap.svg.js"></script>
+	<script src="~/StaticFiles/General/vendor/liquid-meter/liquid.meter.js"></script>
+	<script src="~/StaticFiles/General/vendor/jqvmap/jquery.vmap.js"></script>
+	<script src="~/StaticFiles/General/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+	<script src="~/StaticFiles/General/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+	<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+	<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+	<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+	<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+	<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+	<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+
+	<!-- Theme Base, Components and Settings -->
+	<script src="~/StaticFiles/General/js/theme.js"></script>
+
+	<!-- Theme Custom -->
+	<script src="~/StaticFiles/General/js/custom.js"></script>
+
+	<!-- Theme Initialization Files -->
+	<script src="~/StaticFiles/General/js/theme.init.js"></script>
+
+	<!-- Examples -->
+	<script src="~/StaticFiles/General/js/examples/examples.dashboard.js"></script>
+	<script>
+		var ckeditorFileConfig={
+				   filebrowserUploadUrl:"@Url.Action("ImageUpload","Yonetim")"
+			  }
+	</script>
+	@RenderSection("footer",false)
+</body>
+</html>

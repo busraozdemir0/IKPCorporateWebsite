@@ -1,0 +1,114 @@
+﻿@using EntityLayer.Concrete
+@model SurumKilavuzIcerik
+@{
+    ViewData["Title"] = "SurumKilavuzIcerikDuzenle";
+    Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+<!doctype html>
+<html class="modern fixed has-top-menu has-left-sidebar-half">
+<body>
+    <section class="body">
+        <!-- start: header -->
+        <!-- end: header -->
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <!-- end: sidebar -->
+            <section role="main" class="content-body content-body-modern mt-0">
+                <header class="page-header page-header-left-inline-breadcrumb">
+
+                    <div class="right-wrapper">
+                        <ol class="breadcrumbs">
+                            <li><span>Home</span></li>
+
+                            <li><span>eCommerce</span></li>
+
+                            <li><span>Categories</span></li>
+                        </ol>
+                        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+                    </div>
+                </header>
+                <!-- start: page -->
+                <form class="ecommerce-form action-buttons-fixed" action="#" method="post" enctype="multipart/form-data">
+
+                    <div class="row">
+                        <div class="col">
+                            <section class="card card-modern card-big-info">
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <div>
+                                            <div hidden class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0"></label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor1" type="text" class="form-control form-control-modern" name="SurumKilavuzIcerik_ID" required></textarea>
+                                                </div>
+                                            </div>
+                                             <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Dil</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    @Html.DropDownListFor(x => x.DilTablosuId, (List<SelectListItem>)ViewBag.dil, new { @class = "form-control", id = "SinifSelectBox" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Sürüm Kılavuzu Başlığı</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    @Html.DropDownListFor(x => x.SurumKilavuzuSurumKilavuz_Id, (List<SelectListItem>)ViewBag.surumler, new { @class = "form-control", id = "SinifSelectBox" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Sürüm Kılavuzu Sıra No</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor2" type="text" class="form-control form-control-modern" name="SurumKilavuzIcerik_No" required></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Sürüm Kılavuzu Tanım</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor3" type="text" class="form-control form-control-modern" name="SurumKilavuzIcerik_Tanim" required></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center mb-3">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Sürüm Kılavuzu Açıklama</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <textarea id="editor4" type="text" class="form-control form-control-modern" name="SurumKilavuzIcerik_Aciklama" required></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row action-buttons">
+                        <div class="col-12 col-md-auto">
+                            <button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+                                <i class="bx bx-save text-4 me-2"></i> Kaydet
+                            </button>
+                        </div>
+                    </div>
+                    <script>
+                        CKEDITOR.replace('editor1');
+                        CKEDITOR.replace('editor2');
+                        CKEDITOR.replace('editor3');
+                        CKEDITOR.replace('editor4');
+                        CKEDITOR.instances['editor1'].setData("@Model.SurumKilavuzIcerik_ID");
+                        CKEDITOR.instances['editor2'].setData("@Model.SurumKilavuzIcerik_No");
+					    CKEDITOR.instances['editor3'].setData("@Html.Raw(@Model.SurumKilavuzIcerik_Tanim)");
+					    CKEDITOR.instances['editor4'].setData("@Html.Raw(@Model.SurumKilavuzIcerik_Aciklama)");
+                        CKEDITOR.config.autoParagraph = false;
+
+                    </script>
+                </form>
+                <!-- end: page -->
+            </section>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
+
+
+

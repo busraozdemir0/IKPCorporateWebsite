@@ -1,0 +1,54 @@
+﻿@using EntityLayer.Concrete
+@model List<isilanlari>
+@{
+    ViewData["Title"] = "BasvurduguIlanlar";
+    Layout = "~/Views/Shared/Layout/IsArayan/_IsArayanLayout.cshtml";
+}
+
+<div class="inner-wrapper">
+    <!-- start: sidebar -->
+    <!-- end: sidebar -->
+    <section role="main" class="content-body content-body-modern mt-0" style="top:-100px">
+        <div class="row">
+            <div class="col">
+                <section class="card card-modern card-big-info">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="datatables-header-footer-wrapper mt-2">
+                                <div class="datatable-header">
+                                    <div class="col-12 col-lg-auto mb-3 mb-lg-0">
+                                        <h2 class="font-weight-bold text-6">İş Başvurularım</h2>
+                                    </div>
+                                </div>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th hidden>ID</th>
+                                            <th>İş Başlığı</th>
+                                            <th>Açıklama</th>
+                                            <th>adres</th>
+                                        </tr>
+                                    </thead>
+                                    @foreach (var item in Model)
+                                    
+                                    {
+                                        <tbody>
+                                            <tr>
+                                                
+                                                <td>@item.Baslik</td>
+                                                <td>@item.Aciklama</td>
+                                                <td>@item.IsYeriAdres</td>
+                                                
+                                            </tr>
+                                        </tbody>
+                                    }
+                                </table>
+                                <hr class="solid mt-5 opacity-4">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>

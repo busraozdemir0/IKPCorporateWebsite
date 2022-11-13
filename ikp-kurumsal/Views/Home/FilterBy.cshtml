@@ -1,0 +1,27 @@
+﻿
+
+<h5 class="font-weight-semi-bold">Menüler</h5>
+<ul id="filterby-container" class="nav nav-list flex-column sort-source mb-5" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
+
+</ul>
+
+<script>
+$(document).ready(function() {
+   var pathName=location.pathname
+   var selectedValue= $("#myCollopse").find(`a[href='${pathName}']`).attr("value")
+    
+    $.post("@Url.Action("FilterBy","Home")", {id:selectedValue})
+    .then(function(data){
+        var content=""
+        data.map(function(item) {
+            content+=`
+               <li class="nav-item" data-option-value=".logos"><a class="nav-link" href="${item.altMenuUrl}">${item.altMenuIsim}</a></li>
+            `
+        })
+
+        $("#filterby-container").append(content)
+    })
+})
+
+
+</script>

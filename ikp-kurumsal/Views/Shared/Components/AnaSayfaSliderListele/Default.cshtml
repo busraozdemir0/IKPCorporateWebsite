@@ -1,0 +1,89 @@
+﻿@using EntityLayer.Concrete
+@model List<AnaSayfaKisim1>
+
+
+
+<div class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover nav-inside nav-inside-plus nav-dark nav-md nav-font-size-md show-nav-hover mb-0" data-plugin-options="{'autoplayTimeout': 7000}" data-dynamic-height="['670px','670px','670px','550px','500px']" style="height: 670px;">
+    <div class="owl-stage-outer">
+        <div class="owl-stage">
+
+            @foreach (var i in Model as List<AnaSayfaKisim1>)
+            {
+                <!-- Carousel Slide 1 -->
+                <div class="owl-item position-relative" style="background-image: url(/Resimler/Slider/@i.ResimYol); background-color: #2E3136; background-size: cover; background-position: center;">
+                    <div class="container position-relative z-index-1 h-100">
+                        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                            <h3 class="position-relative text-color-light text-5 line-height-5 font-weight-medium px-4 mb-2 appear-animation" data-appear-animation="fadeInDownShorter" data-plugin-options="{'minWindowWidth': 0}">
+                                <span class="position-absolute right-100pct top-50pct transform3dy-n50 opacity-3">
+                                    <img src="img/slides/slide-title-border.png" class="w-auto appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="250" data-plugin-options="{'minWindowWidth': 0}" alt="" />
+                                </span>
+                                @Html.Raw(@i.AnaSayfaKucukBaslik1) <span class="position-relative"><span class="position-absolute left-50pct transform3dx-n50 top-0 mt-4"><img src="img/slides/slide-blue-line.png" class="w-auto appear-animation" data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="1000" data-plugin-options="{'minWindowWidth': 0}" alt="" /></span></span>
+                                <span class="position-absolute left-100pct top-50pct transform3dy-n50 opacity-3">
+                                    <img src="img/slides/slide-title-border.png" class="w-auto appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="250" data-plugin-options="{'minWindowWidth': 0}" alt="" />
+                                </span>
+                            </h3>
+                            <h1 class="text-color-light font-weight-extra-bold text-12 mb-3 appear-animation" data-appear-animation="blurIn" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">@Html.Raw(@i.AnaSayfaBuyukBaslik1)</h1>
+                            <p class="text-4 text-color-light font-weight-light opacity-7 mb-0" data-plugin-animated-letters data-plugin-options="{'startDelay': 1000, 'minWindowWidth': 0}">@Html.Raw(@i.AnaSayfaDescription1)</p>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!-- Carousel Slide 2 -->
+            <!-- Carousel Slide 3 -->
+
+        </div>
+    </div>
+    <div class="owl-nav">
+        <button type="button" role="presentation" class="owl-prev"></button>
+        <button type="button" role="presentation" class="owl-next"></button>
+    </div>
+    <div class="owl-dots mb-5">
+        @foreach (var item in Model.Select((value, index) => new { value, index }).ToList())
+        {
+            @if (item.index == 0)
+            {
+                <button role="button" class="owl-dot active"><span></span></button>
+            }
+            else
+            {
+                <button role="button" class="owl-dot"><span></span></button>
+            }
+        }
+    </div>
+</div>
+
+@*  <div class="" data-dynamic-height="['650px','650px','650px','550px','500px']" style="background-image:url('/Resimler/Slider/@i.ResimYol'); background-size: cover;">
+    <div class="container position-relative z-index-3 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+    <div class="col-lg-7 text-center">
+    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+    <h3 class="position-relative text-color-dark text-5 line-height-5 font-weight-medium ls-0 px-4 mb-2 appear-animation" data-appear-animation="fadeInDownShorterPlus" data-plugin-options="{'minWindowWidth': 0}">
+    <span class="position-absolute right-100pct top-50pct transform3dy-n50 opacity-7">
+    <img src="~/StaticFiles/Front/img/slides/slide-title-border-light.png" class="w-auto appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="250" data-plugin-options="{'minWindowWidth': 0}" alt="" />
+    </span>
+    @Html.Raw(@i.AnaSayfaKucukBaslik1)
+    <span class="position-absolute left-100pct top-50pct transform3dy-n50 opacity-7">
+    <img src="~/StaticFiles/Front/img/slides/slide-title-border-light.png" class="w-auto appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="250" data-plugin-options="{'minWindowWidth': 0}" alt="" />
+    </span>
+    </h3>
+    <h1 class="text-color-dark font-weight-extra-bold text-12-5 line-height-1 line-height-sm-3 mb-2 appear-animation" data-appear-animation="blurIn" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">@Html.Raw(@i.AnaSayfaBuyukBaslik1)</h1>
+    <p class="text-4-5 text-color-dark font-weight-light opacity-7 text-center mb-5" data-plugin-animated-letters data-plugin-options="{'startDelay': 1000, 'minWindowWidth': 0, 'animationSpeed': 30}">@Html.Raw(@i.AnaSayfaDescription1)</p>
+    <a href="#" class="btn btn-dark btn-outline text-color-dark text-color-hover-dark font-weight-bold text-3 btn-px-5 py-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1800" data-plugin-options="{'minWindowWidth': 0}">GEST STARTED NOW!</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+*@
+
+
+
+
+
+
+
+
+
+
+
+

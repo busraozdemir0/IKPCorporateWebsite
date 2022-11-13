@@ -1,0 +1,95 @@
+﻿@model EntityLayer.Concrete.KullaniciKlavuzuIcerik
+@{
+	ViewData["Title"] = "KullaniciKlavuzuIcerikDuzenle";
+	Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+<section class="body">
+	<!-- start: header -->
+	<!-- end: header -->
+	<div class="inner-wrapper">
+		<!-- start: sidebar -->
+		<!-- end: sidebar -->
+		<section role="main" class="content-body content-body-modern mt-0">
+			<!-- start: page -->
+			<form class="ecommerce-form action-buttons-fixed" action="#" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="Id" value="@Model.Id"/>
+				<div class="gizgos">
+					<div class="row">
+						<div class="col">
+							<section class="card card-modern card-big-info">
+								<div class="card-body">
+									<div class="row">
+										<div>
+											@* @Html.Label("Menü seçiniz")
+												@Html.DropDownListFor(x => x.KMenuId,(List<SelectListItem>)ViewBag.Kmenus, new { @class = "form-control"} )
+											*@
+											<div class="form-group row align-items-center mb-3">
+												<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Dil</label>
+												<div class="col-lg-7 col-xl-6">
+													@Html.DropDownListFor(x => x.DilTablosuId,(List<SelectListItem>)ViewBag.dil, new { @class = "form-control"} )
+												</div>
+											</div>
+											<div class="form-group row align-items-center mb-3">
+												<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Menü</label>
+												<div class="col-lg-7 col-xl-6">
+													@Html.DropDownListFor(x => x.KMenuId,(List<SelectListItem>)ViewBag.menuler, new { @class = "form-control"} )
+												</div>
+											</div>
+											<br />
+											<div class="form-group row align-items-center mb-3">
+												<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Başlık</label>
+												<div class="col-lg-7 col-xl-6">
+													<textarea id="editor1" type="text" class="form-control form-control-modern" rows="4" name="Baslik" value="" >
+														@Html.Raw(@Model.Baslik)
+														</textarea>
+												</div>
+											</div>
+											<div class="form-group row align-items-center mb-3">
+												<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">İçerik</label>
+												<div class="col-lg-7 col-xl-6">
+													<textarea id="editor2" type="text" class="form-control form-control-modern" rows="4" name="Icerik" value="" >
+														@Html.Raw(@Model.Icerik)
+														</textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="row action-buttons">
+						<div class="col-12 col-md-auto">
+							<button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+								<i class="bx bx-save text-4 me-2"></i> Kaydet
+							</button>
+						</div>
+
+					</div>
+				</div>
+			</form>
+		</section>
+	</div>
+</section>
+
+
+
+@section footer{
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+<script>
+
+	CKEDITOR.replace("editor1");
+	CKEDITOR.replace("editor2");
+
+	CKEDITOR.config.autoParagraph = false;
+
+</script>
+    }
+
+
+
+
+
+

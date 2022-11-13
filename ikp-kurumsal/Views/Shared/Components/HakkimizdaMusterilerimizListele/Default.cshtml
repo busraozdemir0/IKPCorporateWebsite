@@ -1,0 +1,19 @@
+﻿@using EntityLayer.Concrete
+@model List<Musterilerimiz>
+
+@foreach (var a in Model)
+{
+    <div>
+        <div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark testimonial-remove-right-quote ps-md-4 mb-0">
+            <div class="testimonial-author">
+                <img src="~/Resimler/Musterilerimiz/@a.MusterilerimizYol" class="img-fluid " width="250" height="250" alt="">
+            </div>
+            <blockquote>
+                <p class="text-color-dark text-4 line-height-5 mb-0">@Html.Raw(@a.MusterilerimizBaslik)</p>
+            </blockquote>
+            <div class="testimonial-author">
+                <p><strong class=" text-2">@Html.Raw(@a.Musterilerimizİcerik)</strong><span>@Html.Raw(@a.MusterilerimizBaslik)</span></p>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,196 @@
+﻿@using EntityLayer.Concrete
+@model List<Haber>
+@{
+    ViewData["Title"] = "Haberler";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+<div role="main" class="main" style="background-color:#fff">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md ">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-12 align-self-center p-static order-2 text-center">
+                            <div class="overflow-hidden pb-2">
+                                <h1 class="text-dark font-weight-bold text-9 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="100">Haberler</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-12 align-self-center order-1">
+                            <ul class="breadcrumb d-block text-center appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                                <li><a href="#">Anasayfa</a></li>
+@*                                <li><a href="#">Portfolio</a></li>
+*@                                <li class="active">Haberler</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container py-2">
+        <ul id="portfolioLoadMoreFilter" class="nav nav-pills sort-source sort-source-style-3 justify-content-center" data-sort-id="portfolio"
+            data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
+           @* <li class="nav-item active" data-option-value="*"><a class="nav-link text-1 text-uppercase active" href="#">Show All</a></li>
+            <li class="nav-item" data-option-value=".websites"><a class="nav-link text-1 text-uppercase" href="#">Websites</a></li>
+            <li class="nav-item" data-option-value=".logos"><a class="nav-link text-1 text-uppercase" href="#">Logos</a></li>
+            <li class="nav-item" data-option-value=".brands"><a class="nav-link text-1 text-uppercase" href="#">Brands</a></li>
+            <li class="nav-item" data-option-value=".medias"><a class="nav-link text-1 text-uppercase" href="#">Medias</a></li>*@
+        </ul>
+        <div class="sort-destination-loader sort-destination-loader-showing mt-4 pt-2">
+            <div id="portfolioLoadMoreWrapper2" class="row portfolio-list sort-destination" style="background-color:#fff;height:inherit !important;" data-sort-id="portfolio" data-total-pages="3">
+              @foreach(var i in Model)
+              {
+                <div class="col-sm-6 col-lg-3 isotope-item websites">
+                    <div class="portfolio-item">
+                        <a href="~/Home/HaberDetay/@i.Haber_id">
+                            <span class="thumb-info thumb-info-lighten border-radius-0">
+                                <span class="thumb-info-wrapper border-radius-0">
+                                    <img src="~/Resimler/Haberler/@i.Haber_resim_yol" style="width:350px; height:150px" class="img-fluid border-radius-0" alt="">
+                                    <span class="thumb-info-title">
+                                        <span class="thumb-info-inner">@Html.Raw(@i.Haber_isim)</span>
+@*                                        <span class="thumb-info-type">Website</span>
+*@                                    </span>
+                                    <span class="thumb-info-action">
+                                        <span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
+                                    </span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                }
+            </div>
+            
+            <div id="portfolioLoadMoreBtnWrapper" class="row">
+                <div class="col">
+                    <div id="portfolioLoadMoreLoader" class="portfolio-load-more-loader">
+                        <div class="bounce-loader">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                    </div>
+@*                    <button id="portfolioLoadMoreDiv" type="button" class="btn btn-dark btn-modern w-100 text-1 text-uppercase outline-none mb-5 p-3">Load More</button>
+*@                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="~/StaticFiles/Front/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/StaticFiles/Front/vendor/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="~/StaticFiles/Front/vendor/animate/animate.compat.css">
+<link rel="stylesheet" href="~/StaticFiles/Front/vendor/simple-line-icons/css/simple-line-icons.min.css">
+<link rel="stylesheet" href="~/StaticFiles/Front/vendor/owl.carousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="~/StaticFiles/Front/vendor/owl.carousel/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="~/StaticFiles/Front/vendor/magnific-popup/magnific-popup.min.css">
+<!-- Theme CSS -->
+<link rel="stylesheet" href="~/StaticFiles/Front/css/theme.css">
+<link rel="stylesheet" href="~/StaticFiles/Front/css/theme-elements.css">
+<link rel="stylesheet" href="~/StaticFiles/Front/css/theme-blog.css">
+<link rel="stylesheet" href="~/StaticFiles/Front/css/theme-shop.css">
+
+<!-- Skin CSS -->
+<link id="skinCSS" rel="stylesheet" href="~/StaticFiles/Front/css/skins/default.css">
+<!-- Theme Custom CSS -->
+<link rel="stylesheet" href="~/StaticFiles/Front/css/custom.css">
+<!-- Head Libs -->
+<script src="~/StaticFiles/Front/vendor/modernizr/modernizr.min.js"></script>
+<!-- Vendor -->
+<script src="~/StaticFiles/Front/vendor/jquery/jquery.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/jquery.appear/jquery.appear.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/jquery.cookie/jquery.cookie.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/jquery.validation/jquery.validate.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/lazysizes/lazysizes.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/isotope/jquery.isotope.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/vide/jquery.vide.min.js"></script>
+<script src="~/StaticFiles/Front/vendor/vivus/vivus.min.js"></script>
+<!-- Theme Base, Components and Settings -->
+<script src="~/StaticFiles/Front/js/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="~/StaticFiles/Front/js/custom.js"></script>
+<!-- Theme Initialization Files -->
+<script src="~/StaticFiles/Front/js/theme.init.js"></script>
+
+<!-- Examples -->
+<script src="~/StaticFiles/Front/js/examples/examples.portfolio.js"></script>
+
+
+<script>
+    var i = 0;
+    function getNews() {
+        var url = '';
+        i++;
+        if (i <= 2) {
+            /* $.ajax({
+           method: "GET",
+           url: url,
+           success: function (data) {
+               if (data != null) {
+                   $.each(data, function (idx, item) {*/
+            $("#portfolioLoadMoreWrapper2").append(
+                
+                '<div class="col-sm-6 col-lg-3 isotope-item medias">' +
+                '<div class="portfolio-item">' +
+                '<a href="CozumlerIcerik">' +
+                '<span class="thumb-info thumb-info-lighten border-radius-0">' +
+                ' <span class="thumb-info-wrapper border-radius-0">' +
+                '<img src="/StaticFiles/Front/img/projects/project-27.jpg" class="img-fluid border-radius-0" alt="">' +
+                '<span class="thumb-info-title">' +
+                ' <span class="thumb-info-inner">Presentation</span>' +
+                ' <span class="thumb-info-type">Brand</span></span>' +
+
+                ' <span class="thumb-info-action">' +
+                ' <span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span></span></span> </span> </a></div> </div>' +
+                ' <div class="col-sm-6 col-lg-3 isotope-item medias">' +
+                '<div class="portfolio-item">' +
+                '<a href="CozumlerIcerik">' +
+                '<span class="thumb-info thumb-info-lighten border-radius-0"><span class="thumb-info-wrapper border-radius-0"><span class="owl-carousel owl-theme dots-inside m-0" data-plugin-options=""><span><img src="/StaticFiles/Front/img/projects/project-1.jpg" class="img-fluid border-radius-0" alt=""></span><span><img src="~/StaticFiles/Front/img/projects/project-1-2.jpg" class="img-fluid border-radius-0" alt=""></span></span><span class="thumb-info-title"><span class="thumb-info-inner">Porto Watch</span>' +
+                //{ 'items': 1, 'margin': 20, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 3000 }+
+                '<span class="thumb-info-type">Media</span></span>' +
+                ' <span class="thumb-info-action"><span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span></span></span></span></a></div></div>' +
+                ' <div class="col-sm-6 col-lg-3 isotope-item logos">' +
+                ' <div class="portfolio-item">' +
+                '<a href="CozumlerIcerik">' +
+                '<span class="thumb-info thumb-info-lighten border-radius-0">' +
+                ' <span class="thumb-info-wrapper border-radius-0">' +
+                '<img src="/StaticFiles/Front/img/projects/project-27.jpg" class="img-fluid border-radius-0" alt="">' +
+                '<span class="thumb-info-title"><span class="thumb-info-inner">Identity</span><span class="thumb-info-type">Logo</span> </span>' +
+                '<span class="thumb-info-action"><span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span></span></span></span></a></div></div >' +
+                '<div class="col-sm-6 col-lg-3 isotope-item websites">' +
+                '<div class="portfolio-item">' +
+                '<a href="CozumlerIcerik">' +
+                '<span class="thumb-info thumb-info-lighten border-radius-0">' +
+                '<span class="thumb-info-wrapper border-radius-0">' +
+                '<img src="/StaticFiles/Front/img/projects/project-27.jpg" class="img-fluid border-radius-0" alt="">' +
+                '<span class="thumb-info-title">' +
+                '<span class="thumb-info-inner">Porto Screens</span>' +
+                '<span class="thumb-info-type">Website</span> </span>' +
+
+                '<span class="thumb-info-action"><span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span></span></span></span></a></div></div>');
+                   /*});
+         }
+      
+
+     }
+   
+ });*/
+        } if (i == 2){
+            $('#portfolioLoadMoreDiv').css('display', 'none');
+        }
+      
+    }
+
+    $('#portfolioLoadMoreDiv').on('click', function () {
+        getNews();
+    });
+   
+</script>

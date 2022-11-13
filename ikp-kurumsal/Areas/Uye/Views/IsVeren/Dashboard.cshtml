@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/Layout/IsVeren/_Layout.cshtml";
+}
+
+
+<section class="body" style="margin-top: -150px;">
+    <div class="inner-wrapper">
+        <section role="main" class="content-body">
+            <div class="row">
+                <div class="col-lg-6 mb-3">
+                    <section class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@ViewBag.kullaniciAdi</h5>
+                                        <p class="card-text">@ViewBag.adsoyad</p>
+                                        <p class="card-text">@ViewBag.mail</p>
+                                        <a class="nav-link" href="/SY/IsVeren/Profilim/">
+                                            Profilim
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row mb-3">
+                        <div class="col-xl-6">
+                            <section class="card card-featured-left card-featured-primary mb-3">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-primary">
+                                                <i class="fas fa-life-ring"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Yayınlanan İş İlanları Sayısı</h4>
+                                                <div class="info">
+                                                    <strong class="amount">@ViewBag.ilansayim</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                                <a class="text-muted text-uppercase" href="#">İş İlanlarım</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-6">
+                            <section class="card card-featured-left card-featured-secondary">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary">
+                                                <i class="fas fa-dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Başvuran Sayısı</h4>
+                                                <div class="info">
+                                                    <strong class="amount">12</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                                <a class="text-muted text-uppercase" href="#">Başvuranlar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <section class="card card-featured-left card-featured-tertiary mb-3">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-tertiary">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Toplam İş Arayan Sayısı</h4>
+                                                <div class="info">
+                                                    <strong class="amount">@ViewBag.isarayansayisi</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                                <a class="text-muted text-uppercase" href="/SY/IsVeren/Isciler/">İş Arayanlar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-6">
+                            <section class="card card-featured-left card-featured-quaternary">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-quaternary">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">İş Veren Sayısı</h4>
+                                                <div class="info">
+                                                    <strong class="amount">@ViewBag.isverensayisi</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                                <a class="text-muted text-uppercase" href="#">İş verenler</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-4 mt-2">
+                @await Component.InvokeAsync("isverendashboardisarayanlistele")
+                @await Component.InvokeAsync("isverendashboardilanlistele")
+            </div>
+
+        </section>
+    </div>
+
+    <aside id="sidebar-right" class="sidebar-right">
+        <div class="nano">
+            <div class="nano-content">
+                <a href="#" class="mobile-close d-md-none">
+                    Collapse <i class="fas fa-chevron-right"></i>
+                </a>
+
+                <div class="sidebar-right-wrapper">
+
+                    <div class="sidebar-widget widget-calendar">
+                        <h6>Upcoming Tasks</h6>
+                        <div data-plugin-datepicker data-plugin-skin="dark"></div>
+
+                        <ul>
+                            <li>
+                                <time datetime="2021-04-19T00:00+00:00">04/19/2021</time>
+                                <span>Company Meeting</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget widget-friends">
+                        <h6>Friends</h6>
+                        <ul>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </aside>
+
+</section>

@@ -1,0 +1,85 @@
+﻿@using EntityLayer.Concrete
+@model EgitimVideolari
+@{
+	ViewData["Title"] = "EgitimVideoDetay";
+	Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+
+
+<div class="body">
+	<div role="main" class="main">
+		<section class="page-header page-header-modern bg-color-light-scale-1 page-header-md ">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col">
+						<div class="row">
+							    <div class="col-md-12 align-self-center p-static order-2 text-center">
+                            <div class="overflow-hidden pb-2">
+                               <h1 class="text-dark font-weight-bold text-9 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="100">Eğitim Videoları</h1>
+                            </div>
+                        </div>
+							<div class="col-md-12 align-self-center order-1">
+								<ul class="breadcrumb d-block text-center appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="300" style="animation-delay: 300ms;">
+									<li><a href="~/Home/Index/">Ana Sayfa</a></li>
+									<li><a href="~/Home/EgitimVideoKategoriler">Kategoriler</a></li>
+									<li><a href="~/Home/EgitimVideo">Kategori Videoları</a></li>
+									<li class="active">Eğitim Videoları</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="container py-4">
+			<div style="border-radius:25px" class="row">
+
+				<iframe width="1000" height="500" src="https://www.youtube.com/embed/@Html.Raw(@Model.EgitimVideo_Yol)"
+						title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+                            clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen>
+				</iframe>
+
+			</div>
+			<div class="row pt-4 mt-2 mb-5">
+				<div class="col-md-7 mb-4 mb-md-0">
+					<div class="overflow-hidden mb-2">
+						<h2 class="text-color-dark font-weight-normal text-5 mb-0 appear-animation" data-appear-animation="maskUp"> <strong class="font-weight-extra-bold">@Model.EgitimVideo_Baslik</strong></h2>
+					</div>
+					<p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">@Html.Raw(@Model.VideoAciklama)</p>
+					@*                        <p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">Donec volutpat nibh sit amet libero ornare non laoreet arcu luctus. Donec id arcu quis mauris euismod placerat sit amet ut metus. Sed imperdiet fringilla sem eget euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+					*@                        <hr class="solid my-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+					<div class="appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="600">
+						<strong class="text-uppercase text-1 me-3 text-dark float-start position-relative top-2">Paylaşın</strong>
+						<ul class="social-icons">
+							<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+							<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+							<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-5 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="900">
+					@*<h2 class="text-color-dark font-weight-normal text-5 mb-2"> <strong class="font-weight-extra-bold">Proje Detayları</strong></h2>
+						<ul class="list list-icons list-primary list-borders text-2">
+						<li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">İstemci:</strong> Okler Themes</li>
+						<li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Tarih:</strong> Eylül 2</li>
+						<li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Yetenekler:</strong> <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">DESIGN</a><a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">BRAND</a><a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">WEBSITES</a></li>
+						<li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Proje URL:</strong> <a href="#" target="_blank" class="text-dark">http://www.okler.net</a></li>
+						</ul>*@
+				</div>
+			</div>
+		</div>
+	</div>
+	<section class="section section-height-3 bg-color-grey m-0 border-0">
+		<div class="container py-4">
+			<h4 class="mb-3 text-4 text-uppercase"> <strong class="font-weight-extra-bold">Kategoriler</strong></h4>
+			<div class="row">
+
+				@await Component.InvokeAsync("EgitimVideoIlgiliVideolar")
+
+			</div>
+		</div>
+	</section>
+</div>

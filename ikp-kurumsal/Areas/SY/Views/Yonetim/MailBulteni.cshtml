@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "MailBulteni";
+    Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+<!doctype html>
+<html class="modern fixed has-top-menu has-left-sidebar-half">
+<body>
+    <section class="body">
+        <!-- start: header -->
+        <!-- end: header -->
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <!-- end: sidebar -->
+            <section role="main" class="content-body content-body-modern mt-0">
+                <header class="page-header page-header-left-inline-breadcrumb">
+
+                    <div class="right-wrapper">
+                        <ol class="breadcrumbs">
+                            <li><span>Home</span></li>
+
+                            <li><span>eCommerce</span></li>
+
+                            <li><span>Categories</span></li>
+                        </ol>
+                        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+                    </div>
+                </header>
+                <div class="row">
+                    <div class="col">
+                        <section class="card card-modern card-big-info">
+                            <div class="card-body">
+                                <div class="row">
+                                    @await Component.InvokeAsync("MailBultenListele")
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>               
+            </section>
+        </div>
+    </section>
+
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+﻿<!-- Vendor -->
+<script src="~/StaticFiles/General/vendor/jquery/jquery.js"></script>
+<script src="~/StaticFiles/General/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+<script src="~/StaticFiles/General/vendor/jquery-cookie/jquery.cookie.js"></script>
+<script src="~/StaticFiles/General/master/style-switcher/style.switcher.js"></script>
+<script src="~/StaticFiles/General/vendor/popper/umd/popper.min.js"></script>
+<script src="~/StaticFiles/General/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="~/StaticFiles/General/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="~/StaticFiles/General/vendor/common/common.js"></script>
+<script src="~/StaticFiles/General/vendor/nanoscroller/nanoscroller.js"></script>
+<script src="~/StaticFiles/General/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+<script src="~/StaticFiles/General/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+<!-- Specific Page Vendor -->
+<script src="~/StaticFiles/General/vendor/jquery-ui/jquery-ui.js"></script>
+<script src="~/StaticFiles/General/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
+<script src="~/StaticFiles/General/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="~/StaticFiles/General/vendor/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+<script src="~/StaticFiles/General/vendor/jquery.easy-pie-chart/jquery.easypiechart.js"></script>
+<script src="~/StaticFiles/General/vendor/flot/jquery.flot.js"></script>
+<script src="~/StaticFiles/General/vendor/flot.tooltip/jquery.flot.tooltip.js"></script>
+<script src="~/StaticFiles/General/vendor/flot/jquery.flot.pie.js"></script>
+<script src="~/StaticFiles/General/vendor/flot/jquery.flot.categories.js"></script>
+<script src="~/StaticFiles/General/vendor/flot/jquery.flot.resize.js"></script>
+<script src="~/StaticFiles/General/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+<script src="~/StaticFiles/General/vendor/raphael/raphael.js"></script>
+<script src="~/StaticFiles/General/vendor/morris/morris.js"></script>
+<script src="~/StaticFiles/General/vendor/gauge/gauge.js"></script>
+<script src="~/StaticFiles/General/vendor/snap.svg/snap.svg.js"></script>
+<script src="~/StaticFiles/General/vendor/liquid-meter/liquid.meter.js"></script>
+<script src="~/StaticFiles/General/vendor/jqvmap/jquery.vmap.js"></script>
+<script src="~/StaticFiles/General/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+<script src="~/StaticFiles/General/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+<script src="~/StaticFiles/General/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+<script src="~/StaticFiles/General/vendor/summernote/summernote-bs4.js"></script>
+<script src="~/StaticFiles/Shared/js/summernote-fontawesome.js"></script>
+<script src="~/StaticFiles/General/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+<script src="~/StaticFiles/General/vendor/dropzone/dropzone.js"></script>
+
+<!--(remove-empty-lines-end)-->
+<!-- Theme Base, Components and Settings -->
+<script src="~/StaticFiles/General/js/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="~/StaticFiles/General/js/custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="~/StaticFiles/General/js/theme.init.js"></script>
+
+<!-- Examples -->
+<script src="~/StaticFiles/General/js/examples/examples.dashboard.js"></script>
+
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+
+        $('#HeaderSelect').change(function () {
+               var id = $(this).val();
+               window.location.href = "@(ViewBag.BaseUrl)SY/DocumentationManual/EditContent/"+id;
+           });
+    });
+    </script>

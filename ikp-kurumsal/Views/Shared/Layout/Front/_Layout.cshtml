@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IKP Kurumsal</title>
+    <meta name="robots" content="noindex">
+    <meta name="keywords" content="" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+    @await Html.PartialAsync("~/Views/Shared/Partials/Front/_HeadStyles.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Partials/Front/_HeadScripts.cshtml")
+    @RenderSection("header",false)
+
+</head>
+<body data-plugin-page-transition>
+    <div class="body">
+       
+
+        @await Html.PartialAsync("~/Views/Shared/Partials/Front/_Header.cshtml")
+@*       <breadcrumb></breadcrumb>
+*@        @RenderBody()
+        @await Component.InvokeAsync("AltBilgiKisim1Listele")
+        @await Html.PartialAsync("~/Views/Shared/Partials/Front/_FooterScripts.cshtml")
+
+    </div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.openSub').click(function () {
+            var id = $(this).attr('data-id');
+            var statusSub = $('#subMenu_' + id).css('display');
+            if (statusSub == 'none') {
+                $('#subMenu_' + id).css('display', 'block');
+                $('#icon_' + id).removeClass('fa-arrow-down');
+                $('#icon_' + id).addClass('fa-arrow-up');
+            }
+            else {
+                $('#subMenu_' + id).css('display', 'none');
+                $('#icon_' + id).removeClass('fa-arrow-up');
+                $('#icon_' + id).addClass('fa-arrow-down');
+            }
+        });
+    });
+
+
+
+        $('#recent').click(function () {
+            $('#popularPosts').removeClass('active');
+        $('#recentPosts').addClass('active');
+    });
+    $('#popular').click( function () {
+            $('#recentPosts').removeClass('active');
+        $('#popularPosts').addClass('active');
+    });
+
+    </script>
+    @RenderSection("footer",false)
+</body>
+</html>

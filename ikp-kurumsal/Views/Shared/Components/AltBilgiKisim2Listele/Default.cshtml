@@ -1,0 +1,14 @@
+﻿@using EntityLayer.Concrete
+@model List<AltBilgi>
+
+<div class="col-md-7 col-lg-2 mb-5 mb-lg-0">
+    <h5 class="text-6 text-transform-none font-weight-semibold text-color-light mb-4">@ViewBag.v</h5>
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-12">
+                <p class="mb-1"><a href="@item.AltBilgiUrl" class="text-3 link-hover-style-1">@Html.Raw(@item.AltBilgiUrlBasligi)</a></p>
+            </div>
+        </div>
+    }
+    </div>

@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concrete
+@model List<AnaSayfaKisim2>
+
+<section class="section  section-height-3 border-0 m-0">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="font-weight-normal text-center text-6 pb-3"><strong class="font-weight-extra-bold">Özelliklerimiz</strong></h2>
+            </div>
+        </div>
+        <div class="row mb-lg-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 appear-animation animated fadeInLeftShorter appear-animation-visible" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300" style="animation-delay: 300ms;">
+                    <a href="@item.Url" target="_blank" class="text-decoration-none">
+                        <div class="feature-box feature-box-style-2">
+                            <div class="feature-box-icon">
+                                <i class="icons icon-support text-color-primary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="font-weight-bold mb-2">@Html.Raw(item.Baslik)</h4>
+                                <p>@Html.Raw(item.Icerik)</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>

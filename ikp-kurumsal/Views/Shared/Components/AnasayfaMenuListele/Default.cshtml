@@ -1,0 +1,34 @@
+﻿@using ikp_kurumsal.ViewComponents.FilterBy
+@model List<EntityLayer.Concrete.AnasayfaMenu>
+
+<nav class="collapse" id="myCollopse">
+
+    <ul class="nav nav-pills" id="mainNav">
+        @foreach (var i in Model)
+        {
+            <li class="dropdown">
+                <a class="dropdown-item dropdown-toggle" href="@i.MenuUrl">
+                    @Html.Raw(@i.MenuIsim)
+                </a>
+                @if (i.anasayfaAltMenus.Count > 0)
+                {
+                    <ul class="dropdown-menu">
+                        @foreach (var j in i.anasayfaAltMenus)
+                        {
+                            <li>
+                                <a class="dropdown-item" href="@j.AltMenuUrl" id="url" value="@j.AnasayfaMenuId">
+                                    @Html.Raw(@j.AltMenuIsim)
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+</nav>
+
+@{
+    FilterBy c = new FilterBy();
+}
+

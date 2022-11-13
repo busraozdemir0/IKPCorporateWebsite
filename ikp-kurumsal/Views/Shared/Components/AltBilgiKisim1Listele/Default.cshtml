@@ -1,0 +1,101 @@
+﻿@using EntityLayer.Concrete
+@model List<Iletisim>
+
+@*<footer id="footer" class="footer-reveal pt-5 mt-0" style="z-index:-1">
+    <div class="container my-4">
+        <div class="row py-5">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-5 col-lg-3 mb-5 mb-lg-0">
+                    <h5 class="text-6 text-transform-none font-weight-semibold text-color-light mb-4">IKP Kurumsal</h5>
+                    <p class="text-4 mb-1">@Html.Raw(@item.Iletisim_Adresimiz)</p>
+                    <br />
+                    <p class="text-5 mb-1 pt-2"><i class="fas fa-phone"></i>@Html.Raw(@item.Iletisim_Telefon_numaramiz)</p>
+                    <p class="text-5 mb-0"><i class="fas fa-envelope"></i><a href="mailto:@Html.Raw(@item.Iletisim_Email_Adresimiz)">  @Html.Raw(@item.Iletisim_Email_Adresimiz)</a></p>
+                </div>
+            }
+            @foreach (var item in Model)
+            {
+                <div class="col-md-5 col-lg-3 mb-5 mb-lg-0">
+                    <h5 class="text-6 text-transform-none font-weight-semibold text-color-light mb-4">Arge Merkezi</h5>
+                    <p class="text-4 mb-1">@Html.Raw(@item.Arge_Iletisim_Adres)</p>
+                    <br />
+                    <p class="text-5 mb-1 pt-2"><i class="fas fa-phone"></i>@Html.Raw(@item.Arge_Iletisim_Telefon)</p>
+                    <p class="text-5 mb-0"><i class="fas fa-envelope"></i><a href="mailto:@Html.Raw(@item.Arge_Iletisim_Email)">  @Html.Raw(@item.Arge_Iletisim_Email)</a></p>
+                </div>
+            }
+            @await Component.InvokeAsync("AltBilgiKisim2Listele")
+            <div class="col-lg-4">
+                <h5 class="text-6 text-transform-none font-weight-semibold text-color-light mb-4">Bizi Takip Edin</h5>
+                @await Component.InvokeAsync("FooterSosyalMedya")
+                <br />
+                @await Html.PartialAsync("~/Views/Home/MailBulteni.cshtml")
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright footer-copyright-style-2">
+        <div class="container py-2">
+            <div class="row py-4">
+                <div class="col d-flex align-items-center justify-content-center mb-4 mb-lg-0">
+                    <p>© IKP Kurumsal @DateTime.Now.Year. Tüm Hakları Saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+*@
+
+
+
+
+
+
+
+
+
+
+<footer id="footer" class="footer-texts-more-lighten">
+    <div class="container">
+        <div class="row py-4 my-5">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-5 col-lg-3 mb-5 mb-lg-0">
+                    <h5 class="text-6 text-transform-none font-weight-semibold text-color-light mb-4">İstanbul</h5>
+                    <p class="text-4 mb-1">@Html.Raw(@item.Iletisim_Adresimiz)</p>
+                    <br />
+                    <p class="text-4 mb-1 pt-2"><i class="fas fa-phone"></i>&nbsp; @Html.Raw(@item.Iletisim_Telefon_numaramiz)</p>
+                    <p class="text-4 mb-0"><i class="fas fa-envelope"></i><a href="mailto:@Html.Raw(@item.Iletisim_Email_Adresimiz)">  @Html.Raw(@item.Iletisim_Email_Adresimiz)</a></p>
+                </div>
+            }
+            @foreach (var item in Model)
+            {
+                <div class="col-md-5 col-lg-3 mb-5 mb-lg-0">
+                    <h5 class="text-6 text-transform-none font-weight-semibold text-color-light mb-4">Düzce</h5>
+                    <p class="text-4 mb-1">@Html.Raw(@item.Arge_Iletisim_Adres)</p>
+                    <br />
+                    <p class="text-4 mb-1 pt-2"><i class="fas fa-phone"></i>&nbsp; @Html.Raw(@item.Arge_Iletisim_Telefon)</p>
+                    <p class="text-4 mb-0"><i class="fas fa-envelope"></i><a href="mailto:@Html.Raw(@item.Arge_Iletisim_Email)">  @Html.Raw(@item.Arge_Iletisim_Email)</a></p>
+                </div>
+            }
+              @await Component.InvokeAsync("AltBilgiKisim2Listele")
+              
+            <div class="col-md-6 col-lg-3">
+                 @await Component.InvokeAsync("FooterSosyalMedya")
+                 <br />
+               @await Html.PartialAsync("~/Views/Home/MailBulteni.cshtml")
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="footer-copyright footer-copyright-style-2 pt-4 pb-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">Sonel Yazılım© 2022. Tüm Hakları Saklıdır</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

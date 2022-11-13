@@ -1,0 +1,52 @@
+﻿@model List<EntityLayer.Concrete.isilanlari>
+@{
+    ViewData["Title"] = "IsBasvuruListele";
+    Layout = "~/Views/Shared/Layout/IsVeren/_Layout.cshtml";
+}
+
+<div class="inner-wrapper">
+    <!-- start: sidebar -->
+    <!-- end: sidebar -->
+    <section role="main" class="content-body content-body-modern mt-0" style="top:-100px">
+        <div class="row">
+            <div class="col">
+                <section class="card card-modern card-big-info">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="datatables-header-footer-wrapper mt-2">
+                                <div class="datatable-header">
+                                    <div class="col-12 col-lg-auto mb-3 mb-lg-0">
+                                        <h2 class="font-weight-bold text-6">İş Başvuruları</h2>
+                                    </div>
+                                </div>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th hidden>ID</th>
+                                            <th>İş Başlığı</th>
+                                            <th>Açıklama</th>
+                                            <th hidden>Başvuran ID</th>
+                                            <th>Başvuran Sayısı</th>
+                                        </tr>
+                                    </thead>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tbody>                 
+                                            <tr>
+                                                <td hidden>@item.Id</td>
+                                                <td>@Html.Raw(@item.Baslik)</td>
+                                                <td> <a href="/SY/IsVeren/IsBasvuruDetay/@item.Id" />@Html.Raw(@item.Aciklama.Substring(0, 10)) ...</td>
+                                                <td>@ViewBag.sayi</td>
+                                            </tr>
+                                        </tbody>
+                                    }
+                                </table>
+                                <hr class="solid mt-5 opacity-4">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>

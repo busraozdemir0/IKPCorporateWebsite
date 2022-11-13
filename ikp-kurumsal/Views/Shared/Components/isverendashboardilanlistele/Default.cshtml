@@ -1,0 +1,37 @@
+﻿     @using EntityLayer.Concrete
+     @model List<isilanlari>
+
+     <div class="col-lg-12 col-xl-6">
+                    <section class="card">
+                        <header class="card-header card-header-transparent">
+                            <div class="card-actions">
+                                <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                                <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                            </div>
+
+                            @*<h2 class="card-title">Company Activity</h2>*@
+                        </header>
+                        <div class="card-body">
+                            <div class="timeline timeline-simple mt-3 mb-3">
+                                <div class="tm-body">
+                                    <div class="tm-title">
+                                        <h5 class="m-0 pt-2 pb-2 text-dark font-weight-semibold text-uppercase">iş ilanlarım</h5>
+                                    </div>
+                                    <ol class="tm-items">
+                                        @foreach(var i in Model)
+                                        {
+                                        <li>
+                                            <div class="tm-box">
+                                                <p class="text-muted mb-0">@Html.Raw(@i.Baslik)</p>
+                                                <p>
+                                                    @Html.Raw(@i.Aciklama)
+                                                </p>
+                                            </div>
+                                        </li>
+                                        }
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>

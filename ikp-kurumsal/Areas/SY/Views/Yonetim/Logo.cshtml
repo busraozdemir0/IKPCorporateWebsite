@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewData["Title"] = "Logo";
+    Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+
+<!doctype html>
+<html class="modern fixed has-top-menu has-left-sidebar-half">
+<body>
+    <section class="body">
+        <!-- start: header -->
+        <!-- end: header -->
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <!-- end: sidebar -->
+            <section role="main" class="content-body content-body-modern mt-0">
+                <header class="page-header page-header-left-inline-breadcrumb">
+ 
+                    <div class="right-wrapper">
+                        <ol class="breadcrumbs">
+                            <li><span>Home</span></li>
+
+                            <li><span>eCommerce</span></li>
+
+                            <li><span>Categories</span></li>
+                        </ol>
+                        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+                    </div>
+                </header>
+                <div class="row">
+                    <div class="col">
+                        <section class="card card-modern card-big-info">
+                            <div class="card-body">
+                                <div class="row">
+                                    @await Component.InvokeAsync("AdminLogoListele")
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!-- start: page -->
+                <form class="ecommerce-form action-buttons-fixed" method="post" enctype="multipart/form-data">
+                    <div class="gizgos" style="display:none;">
+                        <div class="row">
+                            <div class="col">
+                                <section class="card card-modern card-big-info">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div>
+                                                <div class="form-group row align-items-center mb-3">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Logo Url</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <input type="text" class="form-control form-control-modern" rows="4" name="LogoUrl" value="" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row pb-4">
+                                                    <label class="col-lg-3 control-label text-lg-end pt-2">Logo Yükleyin</label>
+                                                    <div class="col-lg-6">
+                                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                            <div class="input-append">
+                                                                <div class="uneditable-input">
+                                                                    <i class="fas fa-file fileupload-exists"></i>
+                                                                    <span class="fileupload-preview"></span>
+                                                                </div>
+                                                                <span class="btn btn-default btn-file">
+
+                                                                    <span class="fileupload-new">Resim Seçiniz</span>
+                                                                    <input type="file" name="LogoResim" required />
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row action-buttons">
+                            <div class="col-12 col-md-auto">
+                                <button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+                                    <i class="bx bx-save text-4 me-2"></i> Kaydet
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+                <!-- end: page -->
+            </section>
+        </div>
+    </section>
+    <script>
+         $(document).ready(function() {
+                            $("#hideshow").click(function() {
+                                $(".gizgos").slideToggle("slow")
+                            });
+
+                        });
+    </script>
+</body>
+</html>
+

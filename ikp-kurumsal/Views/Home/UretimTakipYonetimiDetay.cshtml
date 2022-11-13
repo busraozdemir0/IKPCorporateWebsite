@@ -1,0 +1,53 @@
+﻿@model EntityLayer.Concrete.UretimTakipYonetimi
+@{
+	ViewData["Title"] = "UretimTakipYonetimiDetay";
+	Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+
+<div role="main" class="main">
+	<section class="page-header page-header-modern bg-color-light-scale-1 page-header-md ">
+		<div class="container-fluid">
+			<div class="row align-items-center">
+				<div class="col">
+					<div class="row">
+						<div class="col-md-12 align-self-center order-1">
+							<ul class="breadcrumb d-block text-center appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="300" style="animation-delay: 300ms;">
+								<li><a href="@Url.Action("UretimTakipYonetimi","Home")">Üretim Takip Yönetimi</a></li>
+								<li class="active">Detay</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="container py-4">
+		<div class="row pt-4 mt-2 mb-5">
+			<div class="col-12 mb-4 mb-md-0">
+				<h2 class=" font-weight-normal  mb-2"><strong class="font-weight-extra-bold">@Html.Raw(@Model.UretimTakip_name)</strong></h2>
+				<img src="/Resimler/UretimTakip/@Model.UretimTakip_Resim_Yol" class="img-fluid border-radius-0 float-left w-50 pr-3" alt="">
+				<p>@Html.Raw(@Model.UretimTakip_icerik)</p>
+			</div>
+			<div class="col-12 mt-3">
+				<strong class="text-uppercase text-1 me-3 text-dark float-start position-relative top-2">Paylaş</strong>
+				<ul class="social-icons">
+					<li class="social-icons-facebook"><a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+					<li class="social-icons-twitter"><a href="https://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+					<li class="social-icons-linkedin"><a href="https://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section class="section section-height-3 bg-color-grey m-0 border-0 py-4">
+	<div class="container">
+		<h4 class="mb-3 text-4 text-uppercase">Diğer <strong class="font-weight-extra-bold">Çözümlerimiz</strong></h4>
+		<div class="row">
+			@await Component.InvokeAsync("UretimTakipSon4Listele")
+		</div>
+	</div>
+</section>
+

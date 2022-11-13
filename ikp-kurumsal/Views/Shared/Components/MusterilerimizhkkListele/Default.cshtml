@@ -1,0 +1,14 @@
+﻿@using EntityLayer.Concrete
+@model List<Musterilerimiz>
+
+<h2 class="text-color-dark font-weight-normal text-6 mb-2"><strong class="font-weight-extra-bold">@Html.Raw(@ViewBag.baslik)</strong></h2>
+<p class="lead">@Html.Raw(@ViewBag.icerik)</p>
+
+<div class="row justify-content-center my-5">
+    @foreach (var item in Model)
+    {
+        <div class="col-8 text-center col-md-4">
+            <img src="~/Resimler/Musterilerimiz/@item.MusterilerimizYol" class="img-fluid hover-effect-3" alt="" />
+        </div>
+    }
+</div>

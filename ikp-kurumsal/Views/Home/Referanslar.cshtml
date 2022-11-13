@@ -1,0 +1,67 @@
+﻿@using EntityLayer.Concrete
+@model List<Referanslar>
+@{
+    ViewData["Title"] = "Referanslar";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+<div role="main" class="main" style="background-color:#fff">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md ">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-12 align-self-center p-static order-2 text-center">
+                            <div class="overflow-hidden pb-2">
+                               <h1 class="text-dark font-weight-bold text-9 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="100">Referanslar</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-12 align-self-center order-1">
+                            <ul class="breadcrumb d-block text-center appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                                <li><a href="#">Anasayfa</a></li>
+@*                                <li><a href="#">Portfolio</a></li>
+*@                                <li class="active">Referanslar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container py-2">
+        <ul class="nav nav-pills sort-source sort-source-style-3 justify-content-center" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
+           @* <li class="nav-item active" data-option-value="*"><a class="nav-link text-1 text-uppercase active" href="#">Show All</a></li>
+            <li class="nav-item" data-option-value=".websites"><a class="nav-link text-1 text-uppercase" href="#">Websites</a></li>
+            <li class="nav-item" data-option-value=".logos"><a class="nav-link text-1 text-uppercase" href="#">Logos</a></li>
+            <li class="nav-item" data-option-value=".brands"><a class="nav-link text-1 text-uppercase" href="#">Brands</a></li>
+            <li class="nav-item" data-option-value=".medias"><a class="nav-link text-1 text-uppercase" href="#">Medias</a></li>*@
+        </ul>
+        <div class="sort-destination-loader sort-destination-loader-showing mt-4 pt-2">
+            <div class="row portfolio-list sort-destination" data-sort-id="portfolio">
+         @foreach(var i in Model)
+         {
+                <div class="col-sm-6 col-lg-3 isotope-item websites">
+                    <div class="portfolio-item">
+                        <a href="~/Home/ReferansDetay/@i.Referanslar_id">
+                            <span class="thumb-info thumb-info-lighten border-radius-0">
+                                <span class="thumb-info-wrapper border-radius-0">
+                                    <img src="~/Resimler/Referanslar/@i.Referanslar_resim_yol" style="width: auto;height: 221px;object-fit: contain;" class="img-fluid border-radius-0" alt="">
+                                    <span class="thumb-info-title">
+                                        <span class="thumb-info-inner">@Html.Raw(@i.Referanslar_isim)</span>
+@*                                        <span class="thumb-info-type">Website</span>
+*@                                    </span>
+                                    <span class="thumb-info-action">
+                                        <span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
+                                    </span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+

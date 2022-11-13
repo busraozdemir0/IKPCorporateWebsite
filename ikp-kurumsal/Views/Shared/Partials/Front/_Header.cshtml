@@ -1,0 +1,113 @@
+﻿
+<header id="header" class="header-effect-shrink">
+    <div class="header-body border-top-0">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-row py-2">
+                    <div class="header-column justify-content-start">
+                        <div class="header-row">
+                            <nav class="header-nav-top">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item nav-item-anim-icon d-none d-md-block">
+                                        <a class="nav-link ps-0" href="~/Home/Hakkimizda"><i class="fas fa-angle-right"></i>Hakkımızda</a>
+                                    </li>
+                                    <li class="nav-item nav-item-anim-icon d-none d-md-block">
+                                        <a class="nav-link" href="~/Home/Iletisim/"><i class="fas fa-angle-right"></i>Bizimle İletişime Geçin</a>
+                                    </li>
+                                    <li class="nav-item dropdown nav-item-left-border d-none d-sm-block nav-item-left-border-remove nav-item-left-border-md-show">
+                                        <a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" @*aria-haspopup="true" aria-expanded="false"*@>
+                                            <img src="~/StaticFiles/Front/img/blank.gif" class="flag flag-tr" alt="Türkçe" /> Türkçe
+                                            <i class="fas fa-angle-down"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownLanguage">
+                                           @await Component.InvokeAsync("DilSecenekleri")
+                                        </div>
+                                    </li>
+                                 
+                                    <li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-sm-show">
+                                        <span class="ws-nowrap"><i class="fas fa-phone"></i> (850) 532 32 88</span>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                    </div>
+                    <div class="header-column justify-content-end">
+                        <div class="header-row">
+                            @await Component.InvokeAsync("HeaderSosyalMedya")
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="header-container container">
+            <div class="header-row">
+
+                @await Component.InvokeAsync("AnasayfaLogo")
+
+                <div class="header-column justify-content-end">
+                    <div class="header-row">
+                        <div class="header-column justify-content-end">
+                            <div class="header-row">
+                                <div class="header-nav header-nav-line header-nav-top-line header-nav-top-line-with-border order-2 order-lg-1">
+
+                                    <div class="header-nav-main header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+                                        @await Component.InvokeAsync("AnasayfaMenuListele")
+                                    </div>
+                                    <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                    <div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+                                        <div class="header-nav-feature header-nav-features-search d-inline-flex">
+                                            <a type="button" href="#" class="header-nav-features-toggle text-decoration-none" data-focus="headerSearch">
+                                                <i class="fas fa-search header-nav-top-icon"></i>
+                                            </a>
+                                            <div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed" id="headerTopSearchDropdown">
+                                                <form role="search" action="@Url.Action("Arama","Home")" method="get">
+                                                    <div class="simple-search input-group">
+                                                        <input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Search...">
+                                                        <button class="btn" type="submit">
+                                                            <i class="fas fa-search header-nav-top-icon text-color-dark"></i>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

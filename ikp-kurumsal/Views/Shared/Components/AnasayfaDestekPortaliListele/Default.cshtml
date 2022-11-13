@@ -1,0 +1,14 @@
+﻿@model List<EntityLayer.Concrete.DestekPortali>
+<div class="col">
+    <div class="toggle toggle-primary m-0" data-plugin-toggle>
+        @foreach (var i in Model)
+        {
+            <section class="toggle active">
+                <a class="toggle-title">@Html.Raw(@i.DestekPortali_soru)</a>
+                <div class="toggle-content">
+                    <p>@Html.Raw(@i.DestekPortali_cevap)</p>
+                </div>
+            </section>
+        }
+    </div>
+</div>

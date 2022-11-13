@@ -1,0 +1,81 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+@{
+    ViewData["Title"] = "Blog";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+<style>
+    #footer{
+        margin-top:0px !important;
+    }
+</style>
+
+<div role="main" class="main" style="background-color:#fff">
+        <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md ">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-12 align-self-center p-static order-2 text-center">
+                            <div class="overflow-hidden pb-2">
+                               <h1 class="text-dark font-weight-bold text-9 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="100">Bloglar</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-12 align-self-center order-1">
+                            <ul class="breadcrumb d-block text-center appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                                <li><a href="/">Anasayfa</a></li>
+                               <li class="active">Blog</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="border-0 m-0 pb-3">
+
+        <div class="container">
+
+            <div class="row pb-1">
+                @foreach (var i in Model)
+                {
+                    <div class="col-sm-6 col-lg-4 mb-4 pb-2">
+                        <a href="/Home/BlogDetay/@i.Blog_id">
+
+                            <article>
+                                <div class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
+                                    <div class="thumb-info-wrapper thumb-info-wrapper-opacity-6">
+                                        <img src="~/Resimler/Bloglar/@i.Blog_resim_yol" class="img-fluid" alt="How To Take Better Concert Pictures in 30 Seconds" style="width:500px;height:220px">
+                                        <div class="thumb-info-title bg-transparent p-4">
+                                            @*<div class="thumb-info-type bg-color-primary px-2 mb-1">Photography</div>*@
+                                            <div class="thumb-info-inner mt-1">
+                                                <h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">@Html.Raw(@i.Blog_baslik)</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+
+    <section class="w-100 bg-color-grey-scale-1">
+        <div class="container">
+        <div class="row py-5">
+
+            @await Component.InvokeAsync("BlogSayfasiSecilenListele")
+
+            @await Component.InvokeAsync("BlogSayfasiSonBlogs")
+
+            @await Component.InvokeAsync("BlogOneCikanlar")
+
+        </div>
+        </div>
+    </section>
+    
+    @await Component.InvokeAsync("BlogSayfaKategoriListele")
+</div>

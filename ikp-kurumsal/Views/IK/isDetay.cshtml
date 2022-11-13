@@ -1,0 +1,83 @@
+﻿@model EntityLayer.Concrete.isilanlari
+@{
+    ViewData["Title"] = "isDetay";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lists | Porto - Responsive HTML5 Template</title>
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Porto - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/animate/animate.compat.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/simple-line-icons/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/owl.carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/owl.carousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/css/theme.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/css/theme-elements.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/css/theme-blog.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/css/theme-shop.css">
+    <link id="skinCSS" rel="stylesheet" href="~/StaticFiles/Front/css/skins/default.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/css/custom.css">
+    <script src="~/StaticFiles/Front/vendor/modernizr/modernizr.min.js"></script>
+</head>
+<body data-plugin-page-transition>
+    <div class="body">
+        <div role="main" class="main">
+            <div id="examples" class="container py-2">
+                <div class="row">
+                    <div style="display: block;
+                         margin-left: auto;
+                         margin-right: auto;" class="col-md-8 col-lg-6 mb-5 mb-lg-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                        <div class="card card-background-image-hover border-0" style="background-image: url(/StaticFiles/Front/img/blog/square/blog-1.jpg);">
+                            <div class="card-body text-center p-5">
+                                <i class="icon-layers icons text-color-primary text-10"></i>
+                                <h4 class="card-title mt-2 mb-2 text-5 font-weight-bold">@Html.Raw(@Model.Baslik)</h4>
+                                <h3 class="card-title mt-2 mb-2 text-5 font-weight-bold">@Html.Raw(@Model.IsYeriAdres)</h3>
+                                <p class="card-text">@Html.Raw(@Model.Aciklama)</p>
+                                <a href="/IK/BasvuruYap/@Model.Id" class="btn btn-dark btn-modern">Başvur</a>
+                             
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+    <script src="~/StaticFiles/Front/vendor/jquery/jquery.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.appear/jquery.appear.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.cookie/jquery.cookie.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.validation/jquery.validate.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/lazysizes/lazysizes.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/isotope/jquery.isotope.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/vide/jquery.vide.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/vivus/vivus.min.js"></script>
+    <script src="~/StaticFiles/Front/js/theme.js"></script>
+    <script src="~/StaticFiles/Front/js/custom.js"></script>
+    <script src="~/StaticFiles/Front/js/theme.init.js"></script>
+</body>
+</html>

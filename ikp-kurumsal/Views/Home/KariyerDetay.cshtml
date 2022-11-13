@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.Kariyer
+@{
+	ViewData["Title"] = "KariyerDetay";
+	Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+<div role="main" class="main">
+	<section class="page-header page-header-modern bg-color-light-scale-1 page-header-md ">
+		<div class="container-fluid">
+			<div class="row align-items-center">
+				<div class="col">
+					<div class="row">
+						<div class="col-md-12 align-self-center order-1">
+							<ul class="breadcrumb d-block text-center appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="300" style="animation-delay: 300ms;">
+								<li><a href="#">Anasayfa</a></li>
+								<li><a href="#">Kariyer</a></li>
+								<li class="active">Detay</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="container pt-5">
+		<div class="row py-4 mb-2">
+			<div class="col-md-7 order-2">
+				<div class="overflow-hidden">
+					<h2 class="text-color-dark font-weight-bold text-12 mb-2 pt-0 mt-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">@Html.Raw(@Model.Kariyer_Konu_baslik)</h2>
+				</div>
+				<div class="overflow-hidden mb-3">
+				</div>
+				<p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">@Html.Raw(@Model.kariyer_konu_icerik)</p>
+				<hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
+				<div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
+					@*<div class="col-lg-6">
+						<a href="#" class="btn btn-modern btn-dark mt-3">Get In Touch</a>
+						</div>*@
+				</div>
+			</div>
+			<div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation" data-appear-animation="fadeInRightShorter">
+				<img src="~/Resimler/KariyerResim/@Model.Kariyer_resim_yol" class="img-fluid mb-2" alt="">
+			</div>
+		</div>
+	</div>
+</div>

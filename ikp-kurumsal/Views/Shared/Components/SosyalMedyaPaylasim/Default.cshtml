@@ -1,0 +1,18 @@
+﻿@using EntityLayer.Concrete
+@model SosyalMedyaPaylasim
+
+<div >
+    <h5 class="font-weight-semi-bold">Instagram Sayfamız</h5>
+    <div class="instagram-feed" data-type="nomargins" >
+        @Html.Raw(@Model.Instagram)
+    </div>
+
+    <h5 class="font-weight-semi-bold pt-4">Facebook Sayfamız</h5>
+    @Html.Raw(@Model.Facebook)
+    
+    <h5 class="font-weight-semi-bold">Twitter Sayfamız</h5>
+    <div id="tweet" class="twitter mb-4" data-plugin-tweets data-plugin-options="{'username': 'oklerthemes', 'count': 2}">
+       @Html.Raw(@Model.Twetter)
+    </div>
+
+</div>

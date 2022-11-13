@@ -1,0 +1,123 @@
+﻿@using EntityLayer.Concrete
+@model BlogKategori
+@{
+	ViewData["Title"] = "BlogKategoriGuncelle";
+	Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+<!doctype html>
+<html class="modern fixed has-top-menu has-left-sidebar-half">
+<body>
+	<section class="body">
+		<!-- start: header -->
+		<!-- end: header -->
+		<div class="inner-wrapper">
+			<!-- start: sidebar -->
+			<!-- end: sidebar -->
+			<section role="main" class="content-body content-body-modern mt-0">
+				<header class="page-header page-header-left-inline-breadcrumb">
+
+					<div class="right-wrapper">
+						<ol class="breadcrumbs">
+							<li><span>Home</span></li>
+
+							<li><span>eCommerce</span></li>
+
+							<li><span>Categories</span></li>
+						</ol>
+						<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+					</div>
+				</header>
+
+				<!-- start: page -->
+				<form class="ecommerce-form action-buttons-fixed" action="#" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="ID" value="@Model.ID"/>
+					<input type="hidden" name="KategoriResimYol" value="@Model.KategoriResimYol"/>
+					<div class="gizgos">
+						<div class="row">
+							<div class="col">
+								<section class="card card-modern card-big-info">
+									<div class="card-body">
+										<div class="row">
+
+											<div>
+												<div class="form-group row align-items-center mb-3">
+													<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Dil</label>
+													<div class="col-lg-7 col-xl-6">
+														@Html.DropDownListFor(x => x.DilTablosuId,(List<SelectListItem>)ViewBag.dil, new { @class = "form-control", id="SinifSelectBox"} )
+													</div>
+												</div>
+												<div class="form-group row align-items-center mb-3">
+													<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Kategori Başlığı</label>
+													<div class="col-lg-7 col-xl-6">
+														<textarea id="editor1" type="text" class="form-control form-control-modern" name="BlogKategoriAdi" >@Html.Raw(@Model.BlogKategoriAdi)</textarea>
+													</div>
+												</div>
+
+												<div class="form-group row align-items-center mb-3">
+													<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Kategori Açıklaması</label>
+													<div class="col-lg-7 col-xl-6">
+														<textarea id="editor2" type="text" class="form-control form-control-modern" name="BlogKategoriAciklamasi" >@Html.Raw(@Model.BlogKategoriAciklamasi)</textarea>
+													</div>
+												</div>
+
+
+												<div class="form-group row pb-4">
+													<label class="col-lg-3 control-label text-lg-end pt-2">Resim Yükle</label>
+													<div class="col-lg-6">
+														<img src="/Resimler/BlogKategori/@Model.KategoriResimYol" width="250"/>
+														<div class="fileupload fileupload-new" data-provides="fileupload">
+															<div class="input-append">
+																<div class="uneditable-input">
+																	<i class="fas fa-file fileupload-exists"></i>
+																	<span class="fileupload-preview"></span>
+																</div>
+																<span class="btn btn-default btn-file">
+
+																	<span class="fileupload-new">Select file</span>
+																	<input type="file" name="KategoriResim" />
+																</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<br />
+						<div class="row action-buttons">
+							<div class="col-12 col-md-auto">
+								<button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+									<i class="bx bx-save text-4 me-2"></i> Kaydet
+								</button>
+							</div>
+
+						</div>
+					</div>
+				</form>
+				<!-- end: page -->
+			</section>
+		</div>
+	</section>
+
+</body>
+</html>
+
+@section footer{
+
+<script>
+	CKEDITOR.config.autoParagraph = false;
+	CKEDITOR.replace("editor1");
+	CKEDITOR.replace("editor2");
+
+	$(document).ready(function () {
+		$("#hideshow").click(function () {
+			$(".gizgos").slideToggle("slow")
+		});
+
+	});
+</script>
+}

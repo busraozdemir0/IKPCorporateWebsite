@@ -1,0 +1,331 @@
+﻿@model ikp_kurumsal.Models.AramaModel
+@{
+    ViewData["Title"] = "Arama";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+
+<div role="main" class="main" style="background-color:#fff; margin-bottom:50px">
+    <hr class="m-0">
+    <div class="container col-md-8 py-5 mt-3">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="font-weight-normal text-6 mb-0">Arama sonuçları listeleniyor</h2>
+            </div>
+        </div>
+        <hr class="my-4" style="margin-left:-15px">
+
+        <div class="row">
+            <div class="col-md-12 " style="margin-bottom:80px" ">
+                @foreach (var item in Model.hakkimizdas)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/Hakkimizda/ ">@Html.Raw(@item.Hakkimizda_Baslik)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="col pt-2 mt-1">
+                        <hr class="my-4" style="margin-left:-15px">
+                    </div>
+                }
+                @foreach (var item in Model.kariyers)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/Kariyer/">@Html.Raw(@item.Kariyer_Konu_baslik)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.belgelers)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/Belgelerimiz/">@Html.Raw(@item.Belge_isim)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.arges)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/Arge/">@Html.Raw(@item.Arge_Baslik)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.ıletisims)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/Iletisim/">@Html.Raw(@item.Iletisim_Adresimiz)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.uretimTakipYonetimis)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/UretimTakipYonetimi/">@Html.Raw(@item.UretimTakip_name)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.bakimYonetimis)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/BakimYonetimi/">@Html.Raw(@item.BakimYonetimi_isim)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.enerjiYonetimis)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/EnerjiYonetimi">@Html.Raw(@item.EnerjiYonetimi_isim)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.kaliteYonetimis)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/KaliteYonetimi">@Html.Raw(@item.KaliteYonetimi_isim)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.barkodTakipStoks)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/BarkodTakipliStokYonetimi">@Html.Raw(@item.BarkodTakipStok_isim)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.webMobils)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/WebMobilMonitoring">@Html.Raw(@item.WebMobil_isim)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.entegreSistems)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/EntegreSistemler">@Html.Raw(@item.EntegreSistem_isim)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.endustriAkilliFabrikas)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/EndustriAkilliFabrika">@Html.Raw(@item.EndustriAkilliFabrika_isim)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.referanslars)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/Referanslar">@Html.Raw(@item.Referanslar_isim)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.habers)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/Haberler">@Html.Raw(@item.Haber_isim)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.blogs)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/Blog/">@Html.Raw(@item.Blog_baslik)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    @*<div class="col pt-2 mt-1">*@
+                    <hr class="my-4" style="margin-left:-15px">
+                    @*</div>*@
+                }
+                @foreach (var item in Model.isilanlaris)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/IK/Index/">@Html.Raw(@item.IsYeriAdres)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.destekPortalis)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/DestekPortali/">@Html.Raw(@item.DestekPortali_Baslik)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.kullaniciKlavuzuIceriks)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/KullaniciKilavuzu/">@Html.Raw(@item.Baslik)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.surumKilavuzus)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/SurumKilavuzu/">@Html.Raw(@item.SurumKilavuz_Baslik)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                @foreach (var item in Model.egitimVideolaris)
+                {
+
+                    <ul class="simple-post-list m-0">
+                        <li>
+                            <div class="post-info">
+                                <a href="/Home/EgitimVideo/">@Html.Raw(@item.EgitimVideo_Baslik)</a>
+                                <div class="post-meta">
+                                    @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+        <ul class="pagination float-right">
+            <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+        </ul>
+
+    </div>
+</div>

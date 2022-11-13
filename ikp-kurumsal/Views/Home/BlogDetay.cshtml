@@ -1,0 +1,122 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "BlogDetay";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+        <div role="main" class="main">
+            <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md ">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        @*<div class="col">
+                            <a href="#" class="portfolio-prev text-decoration-none d-block appear-animation" data-appear-animation="fadeInRightShorter">
+                                <div class="d-flex align-items-center line-height-1">
+                                    <i class="fas fa-arrow-left text-dark text-4 me-3"></i>
+                                    <div class="d-none d-sm-block line-height-1">
+                                        <span class="text-dark opacity-4 text-1">PREVIOUS PROJECT</span>
+                                        <h4 class="font-weight-bold text-3 mb-0">Okler Website Design</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>*@
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                                    <div class="overflow-hidden pb-2">
+                                        <h1 class="text-dark font-weight-bold text-9 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="100">@Html.Raw(@Model.Blog_baslik)</h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 align-self-center order-1">
+                                    <ul class="breadcrumb d-block text-center appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                                        <li><a href="#">Anasayfa</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li class="active">Detay</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        @*<div class="col">
+                            <a href="#" class="portfolio-next text-decoration-none d-block float-end appear-animation" data-appear-animation="fadeInLeftShorter">
+                                <div class="d-flex align-items-center text-end line-height-1">
+                                    <div class="d-none d-sm-block line-height-1">
+                                        <span class="text-dark opacity-4 text-1">NEXT PROJECT</span>
+                                        <h4 class="font-weight-bold text-3 mb-0">Porto Admin Dev</h4>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-dark text-4 ms-3"></i>
+                                </div>
+                            </a>
+                        </div>*@
+
+                    </div>
+                </div>
+            </section>
+
+            <div class="container py-4">
+
+                <div class="row">
+                    <div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">
+
+                        <div class="owl-carousel owl-theme nav-inside nav-inside-edge nav-squared nav-with-transparency nav-dark nav-lg d-block overflow-hidden" data-plugin-options="{'items': 1, 'margin': 10, 'loop': false, 'nav': true, 'dots': false, 'autoHeight': true}" style="height: 510px;">
+                            <div>
+                                <div class="img-thumbnail border-0 border-radius-0 p-0 d-block">
+                                    <img src="/Resimler/Bloglar/@Model.Blog_resim_yol" class="img-fluid border-radius-0" alt="">
+                                </div>
+                            </div>
+                            @*<div>
+                                    <div class="img-thumbnail border-0 border-radius-0 p-0 d-block">
+                                        <img src="img/projects/project-short-2.jpg" class="img-fluid border-radius-0" alt="">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="img-thumbnail border-0 border-radius-0 p-0 d-block">
+                                        <img src="img/projects/project-short-3.jpg" class="img-fluid border-radius-0" alt="">
+                                    </div>
+                                </div>*@
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row pt-4 mt-2 mb-5">
+                    <div class="col-md-12 mb-4 mb-md-0">
+
+                        <h2 class="text-color-dark font-weight-normal text-5 mb-2"><strong class="font-weight-extra-bold">@Html.Raw(@Model.Blog_baslik)</strong></h2>
+
+                        <p>@Html.Raw(@Model.Blog_icerik)</p>
+
+                        <hr class="solid my-5">
+
+                        <strong class="text-uppercase text-1 me-3 text-dark float-start position-relative top-2">Share</strong>
+                        <ul class="social-icons">
+                            <li class="social-icons-facebook"><a href="https://www.facebook.com/sonel.com.tr/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li class="social-icons-instagram"><a href="https://www.instagram.com/sonelyazilim/" target="_blank" title="İnstagram"><i class="fab fa-instagram"></i></a></li>
+                            <li class="social-icons-twitter"><a href="https://twitter.com/sonel_yazilim" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            @*<li class="social-icons-linkedin"><a href="https://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>*@
+                        </ul>
+
+                    </div>
+                    @*	<div class="col-md-5">
+                            <h2 class="text-color-dark font-weight-normal text-5 mb-2">Project <strong class="font-weight-extra-bold">Details</strong></h2>
+                            <ul class="list list-icons list-primary list-borders text-2">
+                                <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Client:</strong> Okler Themes</li>
+                                <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Date:</strong> January 2021</li>
+                                <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Skills:</strong> <a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">DESIGN</a><a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">BRAND</a><a href="#" class="badge badge-dark badge-sm rounded-pill px-2 py-1 ms-1">WEBSITES</a></li>
+                                <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Project URL:</strong> <a href="#" target="_blank" class="text-dark">http://www.okler.net</a></li>
+                            </ul>
+                        </div>*@
+                </div>
+                 
+            </div>
+
+        </div>
+
+        <section class="section section-height-3 bg-color-grey m-0 border-0">
+            <div class="container py-4">
+                <h4 class="mb-3 text-4 text-uppercase">Diğer Kategoriler @*<strong class="font-weight-extra-bold">Projects</strong>*@</h4>
+                <div class="row">
+
+                    @await Component.InvokeAsync("BlogSon4Listele")
+
+                </div>
+            </div>
+        </section>

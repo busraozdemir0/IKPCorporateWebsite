@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+
+<div class="col-md-6 col-lg-4">
+    <h3 class="font-weight-bold text-3 mb-0">Popüler Bloglar</h3>
+    @foreach (var item in Model)
+    {
+        <ul class="simple-post-list">
+            <li>
+                <article>
+                    <div class="post-image">
+                        <div class="img-thumbnail img-thumbnail-no-borders d-block">
+                            <a href="/Home/BlogDetay/@item.Blog_id">
+                                <img src="~/Resimler/Bloglar/@item.Blog_resim_yol" class="border-radius-0" width="50" height="50" alt="Simple Ways to Have a Pretty Face">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="post-info">
+                        <h4 class="font-weight-normal text-3 line-height-4 mb-0"><a href="/Home/BlogDetay/@item.Blog_id" class="text-dark">@Html.Raw(@item.Blog_baslik)</a></h4>
+                        <div class="post-meta">
+                            @Html.Raw(@item.Blog_icerik.Substring(0, item.Blog_icerik.Substring(0, 50).LastIndexOf(" ")))...
+                        </div>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    }
+
+</div>

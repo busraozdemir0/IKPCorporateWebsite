@@ -1,0 +1,68 @@
+﻿@using EntityLayer.Concrete
+@model List<BlogKategori>
+
+<section class="section bg-color-primary border-0 m-0">
+    <div class="container container-xl-custom">
+        <div class="row">
+            <div class="col text-center">
+                <div class="owl-carousel owl-theme nav-dark stage-margin nav-style-1 m-0" data-plugin-options="{'items': 6, 'margin': 5, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="px-3">
+                            <a href="/Home/BlogKategoriDetay/@item.ID" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">@Html.Raw(@item.BlogKategoriAdi)</a>
+                        </div>
+
+                        @*<div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Photography</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Lifestyle</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Fashion</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Recipes</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Travel</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Business</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Architecture</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Reviews</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Sports</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Videos</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Technology</a>
+                            </div>
+
+                            <div class="px-3">
+                                <a href="#" class="btn btn-dark w-100 py-3 rounded-0 text-2 text-uppercase font-weight-bold">Design</a>
+                            </div>*@
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

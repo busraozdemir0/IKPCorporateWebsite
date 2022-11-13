@@ -1,0 +1,23 @@
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramwork;
+using Microsoft.AspNetCore.Mvc;
+
+namespace ikp_kurumsal.ViewComponents.hakkimizdalistele
+{
+    public class hakkimizdalistele:ViewComponent
+    {
+       private readonly IHakkimizdaService _hakkimizdaService;
+
+        public hakkimizdalistele(IHakkimizdaService hakkimizdaService)
+        {
+            _hakkimizdaService = hakkimizdaService;
+        }
+
+        public IViewComponentResult Invoke()
+        {
+            var hakkimizdalist = _hakkimizdaService.GetList();
+            return View(hakkimizdalist);
+        }
+    }
+}

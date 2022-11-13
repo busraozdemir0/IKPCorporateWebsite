@@ -1,0 +1,74 @@
+﻿@using EntityLayer.Concrete
+@model List<SurumKilavuzu>
+
+@{
+   
+    ViewData["Title"] = "SurumKilavuzu";
+    Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+<div role="main" class="main" style="background-color:#fff">
+
+        <section class="page-header page-header-modern page-header page-header-modern bg-color-primary page-header-md m-0">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 align-self-center p-static order-2 text-center">
+                        <h1 class="text-light text-10"><strong>Sürüm Kılavuzu</strong></h1>
+                        @*<span class="sub-title text-light">6 search results for: <strong>test</strong></span>*@
+                    </div>
+@*                    <div class="col-md-12 align-self-center order-1">
+                        <ul class="breadcrumb d-block text-center breadcrumb-light">
+                            <li><a href="#">@ViewData["Title"]</a></li>
+                        </ul>
+                    </div>*@
+                </div>
+            </div>
+        </section>
+        <hr class="m-0">
+        <div class="container col-md-8 py-5 mt-3">
+       
+            <div class="row">
+                <div class="col-md-8 ">
+                    @foreach (var item in Model)
+                    {
+                        <ul class="simple-post-list m-0">
+                            <li>
+                                <div class="post-info">
+                                    <a href="/Home/SurumKilavuzuDetay/@item.SurumKilavuz_Id">@Html.Raw(@item.SurumKilavuz_Baslik)</a>
+                                    <div class="post-meta">
+                                        <span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    }
+                </div>
+                    @await Component.InvokeAsync("SurumBilgiBankMenuler")
+
+                </div>
+    @*        <ul class="pagination float-right">
+                <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+            </ul>*@
+
+        </div>
+@*        <section class="section section-default border-0 m-0">
+            <div class="container py-4">
+                <div class="row pb-4">
+                    <div class="col">
+                        <form action="page-search-results.html" method="get">
+                            <div class="input-group input-group-lg">
+                                <input class="form-control h-auto" placeholder="Search..." name="s" id="s" type="text">
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+    </div>

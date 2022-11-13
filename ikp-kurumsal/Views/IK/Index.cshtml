@@ -1,0 +1,124 @@
+﻿@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/Layout/Front/_Layout.cshtml";
+}
+
+
+@section header{
+<style>
+	.br-18 {
+		border-radius: 18px;
+	}
+</style>
+}
+
+<div class="body">
+	<div role="main" class="main">
+		<div class="container py-5 ">
+			<div class="card border-2 bg-color-white rounded-3 p-2">
+				<div class="card-body">
+					<form id="frmSignIn" method="post" class="needs-validation" novalidate="novalidate">
+						<div class="row">
+							<div class="col-md-6">
+								<img draggable="false" src="~/Resimler/InsanKaynaklari/insan-kaynalari.jpg" class="img-fluid rounded-3 br-18" />
+							</div>
+							<div class="col-md-6">
+								<div class="form-group mt-md-0 mt-4">
+									<p class="form-label text-color-dark text-3">Email Adres:</p>
+									<input type="text" name="username" value="" class="form-control form-control-lg text-4" required="">
+								</div>
+
+								<div class="form-group ">
+									<p class="form-label text-color-dark text-4">Şifre:</p>
+									<input type="password" value="" name="password" class="form-control form-control-lg text-4" required="">
+								</div>
+								<div class="d-flex justify-content-between">
+									<div>
+										<div class="form-group">
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="rememberme">
+												<label class="form-label custom-control-label cur-pointer text-2" for="rememberme">Beni Hatırla</label>
+											</div>
+										</div>
+										<div class="form-group">
+											<a class="text-decoration-none text-color-dark text-color-hover-primary font-weight-semibold text-2" href="/IK/SifremiUnuttum">Şifremi Unuttum?</a>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-dark btn-modern w-25  text-uppercase rounded-0 font-weight-bold text-3 " data-loading-text="Loading...">Giriş</button>
+								</div>
+								@if (ViewBag.ErrorMessage != null)
+								{
+									<div class="alert alert-warning mt-2">
+										<strong>Uyarı! </strong>@ViewBag.ErrorMessage
+									</div>
+								}
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<br />
+			<section class="section section-primary border-0 mb-0 appear-animation" data-appear-animation="fadeIn" data-plugin-options="{'accY': -150}">
+				<div class="container">
+					<div class="row counters counters-sm pb-4 pt-3">
+						<div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
+							<div class="counter">
+								<i class="icons icon-user text-color-light"></i>
+								<strong class="text-color-light font-weight-extra-bold" data-to="@ViewBag.kulaniciSayisi" data-append="+">0</strong>
+								<label class="text-4 mt-1 text-color-light">Kullanıcı Sayısı</label>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
+							<div class="counter">
+								<i class="icons icon-people text-color-light"></i>
+								<strong class="text-color-light font-weight-extra-bold" data-to="@ViewBag.isverenSayisi">0</strong>
+								<label class="text-4 mt-1 text-color-light">İş Verenler</label>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-3 mb-5 mb-sm-0">
+							<div class="counter">
+								<i class="icons icon-graph text-color-light"></i>
+								<strong class="text-color-light font-weight-extra-bold" data-to="@ViewBag.isarayanSayisi">0</strong>
+								<label class="text-4 mt-1 text-color-light">İş Arayanlar</label>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-3">
+							<div class="counter">
+								<i class="icons icon-docs text-color-light"></i>
+								<strong class="text-color-light font-weight-extra-bold" data-to="@ViewBag.isilaniSayisi">0</strong>
+								<label class="text-4 mt-1 text-color-light">İş İlanları</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+		<div id="examples" class="container py-2">
+			<div class="row">
+				@await Component.InvokeAsync("IKIsilanlariListele")
+			</div>
+		</div>
+	</div>
+</div>
+
+@section footer{
+<script src="~/StaticFiles/Front/js/theme.init.js"></script>
+<script>
+	$(document).ready(function () {
+		$(".btnopen").click(function () {
+			var aciklama = $(this).attr("data-aciklama")
+			$(".modal-acilklama").text(aciklama)
+			var baslik = $(this).attr("data-baslik")
+			$(".modal-title").text(baslik)
+			$("#myModal").modal("show");
+		});
+
+		$(".btnClose").click(function () {
+			$("#myModal").modal("hide");
+		});
+	});
+</script>
+
+	}

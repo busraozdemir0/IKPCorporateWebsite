@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html class="fixed">
+<head>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <title>Default Layout | Porto Admin - Responsive HTML5 Template</title>
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    @await Html.PartialAsync("~/Views/Shared/Partials/General/_HeadStyles.cshtml")
+     @RenderSection("header",false)
+</head>
+<body>
+    <section class="body">
+        <!-- start: header -->
+        @await Html.PartialAsync("~/Views/Shared/Partials/General/_Header.cshtml")
+        <!-- end: header -->
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            @await Html.PartialAsync("~/Views/Shared/Partials/General/_SidebarLeft.cshtml")
+            <!-- end: sidebar -->
+            <section role="main" class="content-body">
+                @*@await Html.PartialAsync("~/Views/Shared/Partials/General/_PageHeader.cshtml")*@
+                <!-- start: page -->
+                @RenderBody()
+                <!-- end: page -->
+            </section>
+        </div>
+        @await Html.PartialAsync("~/Views/Shared/Partials/General/_SidebarRight.cshtml")
+    </section>
+    @await Html.PartialAsync("~/Views/Shared/Partials/General/_FooterScripts.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Partials/General/_HeadScripts.cshtml")
+    @RenderSection("footer",false)
+</body>
+</html>

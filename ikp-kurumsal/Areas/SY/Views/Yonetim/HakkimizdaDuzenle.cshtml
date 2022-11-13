@@ -1,0 +1,191 @@
+﻿@using EntityLayer.Concrete
+@model Hakkimizda
+@{
+	ViewData["Title"] = "HakkimizdaDuzenle";
+	Layout = "~/Views/Shared/Layout/General/AdminLayout.cshtml";
+}
+
+
+<div class="inner-wrapper">
+	<!-- start: sidebar -->
+	<!-- end: sidebar -->
+	<section role="main" class="content-body content-body-modern mt-0">
+		<header class="page-header page-header-left-inline-breadcrumb">
+
+			<div class="right-wrapper">
+				<ol class="breadcrumbs">
+					<li><span>Home</span></li>
+
+					<li><span>eCommerce</span></li>
+
+					<li><span>Categories</span></li>
+				</ol>
+				<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+			</div>
+		</header>
+
+		<!-- start: page -->
+		<form class="ecommerce-form action-buttons-fixed" action="#" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="Hkkimizda_id" value="@Model.Hkkimizda_id" />
+			<input type="hidden" name="BannerResimYol" value="@Model.BannerResimYol" />
+			<input type="hidden" name="EkibimizResimYol" value="@Model.EkibimizResimYol" />
+			<div class="row">
+				<div class="col">
+					<section class="card card-modern card-big-info">
+						<div class="card-body">
+							<div class="row">
+
+								<div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Dil</label>
+										<div class="col-lg-7 col-xl-6">
+											@Html.DropDownListFor(x => x.DilTablosuId,(List<SelectListItem>)ViewBag.dil, new { @class = "form-control", id="SinifSelectBox"} )
+										</div>
+									</div>
+
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Banner Başlık</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor1" type="text" class="form-control form-control-modern" name="BannerBaslik">@Html.Raw(Model.BannerBaslik)</textarea>
+										</div>
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Banner Alt Başlık</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor2" class="form-control form-control-modern" name="BannerAltBaslik">@Html.Raw(Model.BannerAltBaslik)</textarea>
+										</div>
+
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Banner Resim </label>
+										<div class="col-lg-7 col-xl-6">
+											<img src="~/Resimler/HakkimizdaBanner/@Model.BannerResimYol" width="250" />
+											<input class="form-control" name="BannerResim" type="file" />
+										</div>
+
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Başlık</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor3" class="form-control form-control-modern" name="Baslik" rows="4">@Html.Raw(Model.Baslik)</textarea>
+										</div>
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">İçerik</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor4" class="form-control form-control-modern" name="Icerik" rows="4">@Html.Raw(Model.Icerik)</textarea>
+										</div>
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt Başlık 1</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor5" class="form-control form-control-modern" name="AltBaslik1" rows="4">@Html.Raw(Model.AltBaslik1)</textarea>
+										</div>
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt İçerik 1</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor6" class="form-control form-control-modern" name="AltIcerik1" rows="4">@Html.Raw(Model.AltIcerik1)</textarea>
+										</div>
+									</div>
+
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt Başlık 2</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor7" class="form-control form-control-modern" name="AltBaslik2" rows="4">@Html.Raw(Model.AltBaslik2)</textarea>
+										</div>
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt İçerik 1</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor8" class="form-control form-control-modern" name="AltIcerik2" rows="4">@Html.Raw(Model.AltIcerik2)</textarea>
+										</div>
+									</div>
+
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt Başlık 3</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor9" class="form-control form-control-modern" name="AltBaslik3" rows="4">@Html.Raw(Model.AltBaslik3)</textarea>
+										</div>
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Alt İçerik 3</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor10" class="form-control form-control-modern" name="AltIcerik3" rows="4">@Html.Raw(Model.AltIcerik3)</textarea>
+										</div>
+									</div>
+
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Ekibimiz Başlık</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor11" type="text" class="form-control form-control-modern" name="EkibimizBaslik" value="">@Html.Raw(Model.EkibimizBaslik)</textarea>
+										</div>
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Ekibimiz İçerik</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor12" type="text" class="form-control form-control-modern" name="EkibimizIcerik" value="">@Html.Raw(Model.EkibimizIcerik)</textarea>
+										</div>
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Ekibimiz Resim</label>
+										<div class="col-lg-7 col-xl-6">
+											<img src="~/Resimler/EkipResim/@Model.EkibimizResimYol" width="250" />
+											<input class="form-control" name="EkibimizResim" type="file" />
+										</div>
+									</div>
+
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Müşterilerimiz Başlık</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor13" type="text" class="form-control form-control-modern" name="MusterilerimizBaslik" value="">@Html.Raw(Model.MusterilerimizBaslik)</textarea>
+										</div>
+									</div>
+									<div class="form-group row align-items-center mb-3">
+										<label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Müşterilerimiz İçerik</label>
+										<div class="col-lg-7 col-xl-6">
+											<textarea id="editor14" type="text" class="form-control form-control-modern" name="MusterilerimizIcerik" value="">@Html.Raw(Model.MusterilerimizIcerik)</textarea>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="row action-buttons">
+				<div class="col-12 col-md-auto">
+					<button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+						<i class="bx bx-save text-4 me-2"></i> Kaydet
+					</button>
+				</div>
+
+			</div>
+
+
+		</form>
+	</section>
+</div>
+@section footer{
+<script>
+	CKEDITOR.replace('editor1');
+	CKEDITOR.replace('editor2');
+	CKEDITOR.replace('editor3');
+	CKEDITOR.replace('editor4');
+	CKEDITOR.replace('editor5');
+	CKEDITOR.replace('editor6');
+	CKEDITOR.replace('editor7');
+	CKEDITOR.replace('editor8');
+	CKEDITOR.replace('editor9');
+	CKEDITOR.replace('editor10');
+	CKEDITOR.replace('editor11');
+	CKEDITOR.replace('editor12');
+	CKEDITOR.replace('editor13');
+	CKEDITOR.replace('editor14');
+
+	CKEDITOR.config.autoParagraph = false;
+
+</script>
+}

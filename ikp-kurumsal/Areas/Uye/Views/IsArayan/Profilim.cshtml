@@ -1,0 +1,445 @@
+﻿@model ikp_kurumsal.Areas.SY.Models.KullaniciGuncelleDto
+@{
+    ViewData["Title"] = "IsArayanProfil";
+    Layout = "~/Views/Shared/Layout/IsArayan/_IsArayanLayout.cshtml";
+}
+
+<!doctype html>
+<html class="fixed">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <title>Basic Forms | Porto Admin - Responsive HTML5 Template</title>
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/animate/animate.compat.css">
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/boxicons/css/boxicons.min.css" />
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+    <link rel="stylesheet" href="~/StaticFiles/Front/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
+
+    <link rel="stylesheet" href="~/StaticFiles/css/theme.css" />
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="~/StaticFiles/css/skins/default.css" />
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="~/StaticFiles/css/custom.css">
+
+    <!-- Head Libs -->
+    <script src="~/StaticFiles/Front/vendor/modernizr/modernizr.js"></script>
+
+</head>
+<body>
+    <section class="body">
+
+        <!-- start: header -->
+@*        <header class="header">
+            <div class="logo-container">
+                <a href="../4.0.0" class="logo">
+                    <img src="~/StaticFiles/General/img/logo-modern.png" class="logo-image" width="90" height="24" alt="Porto Admin" />
+                </a>
+
+                <button class="btn header-btn-collapse-nav d-lg-none" data-bs-toggle="collapse" data-bs-target=".header-nav">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- start: search & user box -->
+            <div class="header-right">
+
+                <form action="pages-search-results.html" class="search nav-form">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+                        <button class="btn btn-default" type="submit"><i class="bx bx-search"></i></button>
+                    </div>
+                </form>
+
+                <span class="separator"></span>
+
+                <ul class="notifications">
+                    <li>
+                        <a href="#" class="dropdown-toggle notification-icon" data-bs-toggle="dropdown">
+                            <i class="bx bx-list-ol"></i>
+                            <span class="badge">3</span>
+                        </a>
+
+                        <div class="dropdown-menu notification-menu large">
+                            <div class="notification-title">
+                                <span class="float-end badge badge-default">3</span>
+                                Tasks
+                            </div>
+
+                            <div class="content">
+                                <ul>
+                                    <li>
+                                        <p class="clearfix mb-1">
+                                            <span class="message float-start">Generating Sales Report</span>
+                                            <span class="message float-end text-dark">60%</span>
+                                        </p>
+                                        <div class="progress progress-xs light">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p class="clearfix mb-1">
+                                            <span class="message float-start">Importing Contacts</span>
+                                            <span class="message float-end text-dark">98%</span>
+                                        </p>
+                                        <div class="progress progress-xs light">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p class="clearfix mb-1">
+                                            <span class="message float-start">Uploading something big</span>
+                                            <span class="message float-end text-dark">33%</span>
+                                        </p>
+                                        <div class="progress progress-xs light mb-1">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                @*    <li>
+                        <a href="#" class="dropdown-toggle notification-icon" data-bs-toggle="dropdown">
+                            <i class="bx bx-envelope"></i>
+                            <span class="badge">4</span>
+                        </a>
+
+                        <div class="dropdown-menu notification-menu">
+                            <div class="notification-title">
+                                <span class="float-end badge badge-default">230</span>
+                                Messages
+                            </div>
+
+                            <div class="content">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <figure class="image">
+                                                <img src="img/!sample-user.jpg" alt="Joseph Doe Junior" class="rounded-circle" />
+                                            </figure>
+                                            <span class="title">Joseph Doe</span>
+                                            <span class="message">Lorem ipsum dolor sit.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <figure class="image">
+                                                <img src="img/!sample-user.jpg" alt="Joseph Junior" class="rounded-circle" />
+                                            </figure>
+                                            <span class="title">Joseph Junior</span>
+                                            <span class="message truncate">Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <figure class="image">
+                                                <img src="img/!sample-user.jpg" alt="Joe Junior" class="rounded-circle" />
+                                            </figure>
+                                            <span class="title">Joe Junior</span>
+                                            <span class="message">Lorem ipsum dolor sit.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <figure class="image">
+                                                <img src="img/!sample-user.jpg" alt="Joseph Junior" class="rounded-circle" />
+                                            </figure>
+                                            <span class="title">Joseph Junior</span>
+                                            <span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <hr />
+
+                                <div class="text-end">
+                                    <a href="#" class="view-more">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle notification-icon" data-bs-toggle="dropdown">
+                            <i class="bx bx-bell"></i>
+                            <span class="badge">3</span>
+                        </a>
+
+                        <div class="dropdown-menu notification-menu">
+                            <div class="notification-title">
+                                <span class="float-end badge badge-default">3</span>
+                                Alerts
+                            </div>
+
+                            <div class="content">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <div class="image">
+                                                <i class="fas fa-thumbs-down bg-danger text-light"></i>
+                                            </div>
+                                            <span class="title">Server is Down!</span>
+                                            <span class="message">Just now</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <div class="image">
+                                                <i class="bx bx-lock bg-warning text-light"></i>
+                                            </div>
+                                            <span class="title">User Locked</span>
+                                            <span class="message">15 minutes ago</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <div class="image">
+                                                <i class="fas fa-signal bg-success text-light"></i>
+                                            </div>
+                                            <span class="title">Connection Restaured</span>
+                                            <span class="message">10/10/2021</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <hr />
+
+                                <div class="text-end">
+                                    <a href="#" class="view-more">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <span class="separator"></span>
+
+                <div id="userbox" class="userbox">
+                    <a href="#" data-bs-toggle="dropdown">
+                        <figure class="profile-picture">
+                            <img src="img/!logged-user.jpg" alt="Joseph Doe" class="rounded-circle" data-lock-picture="img/!logged-user.jpg" />
+                        </figure>
+                        <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+                            <span class="name">John Doe Junior</span>
+                            <span class="role">Administrator</span>
+                        </div>
+
+                        <i class="fa custom-caret"></i>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <ul class="list-unstyled mb-2">
+                            <li class="divider"></li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="bx bx-user-circle"></i> My Profile</a>
+                            </li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="bx bx-lock"></i> Lock Screen</a>
+                            </li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="bx bx-power-off"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end: search & user box -->
+        </header>
+
+*@
+<!-- end: header -->
+
+        <div class="inner-wrapper" >
+            <section role="main" class="content-body card-margin">
+
+                <!-- start: page -->
+                <div class="row">
+                    <div class="col" >
+                        <section class="card" style="top:-85px">
+                            <header class="card-header" >
+                                <div class="card-actions">
+                                    <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                                    <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                                </div>
+                                <h2 class="card-title">Profil Ayarları</h2>
+                            </header>
+                            <div class="card-body">
+                                <form class="form-horizontal form-bordered" method="post" enctype="multipart/form-data">
+                                    <div class="form-group row pb-4">
+                                        <label class="col-lg-3 control-label text-lg-end pt-2">Adı Soyadı: </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="namesurname" value="@Model.namesurname">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row pb-4">
+                                        <label class="col-lg-3 control-label text-lg-end pt-2">Kullanıcı Adı: </label>
+                                        <div class="col-lg-6">
+                                            <input class="form-control" type="text" name="username" value="@Model.username">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row pb-4">
+                                        <label class="col-lg-3 control-label text-lg-end pt-2">E-Mail: </label>
+                                        <div class="col-lg-6">
+                                            <input class="form-control" type="text" name="email" value="@Model.email">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row pb-4">
+                                        <label class="col-lg-3 control-label text-lg-end pt-2">Şifre: </label>
+                                        <div class="col-lg-6">
+                                            <input type="password" class="form-control" name="password" value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="form-group row pb-4">
+                                            <label class="col-lg-3 control-label text-lg-end pt-2">CV Güncelle</label>
+                                            <div class="col-lg-6">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="input-append">
+                                                        <div class="uneditable-input">
+                                                            <i class="fas fa-file fileupload-exists"></i>
+                                                            <span class="fileupload-preview"></span>
+                                                        </div>
+                                                        <span class="btn btn-default btn-file">
+
+                                                            <span class="fileupload-new">Dosya Seçiniz</span>
+                                                            <input type="file" name="isarayancv" />
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row pb-4">
+                                        <label class="col-lg-3 control-label text-lg-end pt-2">CV: </label>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-12 control-label"><a href="~/IsArayanCv/@Model.isarayancvyol">@Model.isarayancvyol</a></label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row pb-4">
+                                        <div class="col-lg-6" style="text-align:center;">
+                                            <button type="submit" class="btn btn-primary">Güncelle</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        @*<aside id="sidebar-right" class="sidebar-right">
+            <div class="nano">
+                <div class="nano-content">
+                    <a href="#" class="mobile-close d-md-none">
+                        Collapse <i class="fas fa-chevron-right"></i>
+                    </a>
+
+                    <div class="sidebar-right-wrapper">
+
+                        <div class="sidebar-widget widget-calendar">
+                            <h6>Upcoming Tasks</h6>
+                            <div data-plugin-datepicker data-plugin-skin="dark"></div>
+
+                            <ul>
+                                <li>
+                                    <time datetime="2021-04-19T00:00+00:00">04/19/2021</time>
+                                    <span>Company Meeting</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-widget widget-friends">
+                            <h6>Friends</h6>
+                            <ul>
+                                <li class="status-online">
+                                    <figure class="profile-picture">
+                                        <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                                    </figure>
+                                    <div class="profile-info">
+                                        <span class="name">Joseph Doe Junior</span>
+                                        <span class="title">Hey, how are you?</span>
+                                    </div>
+                                </li>
+                                <li class="status-online">
+                                    <figure class="profile-picture">
+                                        <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                                    </figure>
+                                    <div class="profile-info">
+                                        <span class="name">Joseph Doe Junior</span>
+                                        <span class="title">Hey, how are you?</span>
+                                    </div>
+                                </li>
+                                <li class="status-offline">
+                                    <figure class="profile-picture">
+                                        <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                                    </figure>
+                                    <div class="profile-info">
+                                        <span class="name">Joseph Doe Junior</span>
+                                        <span class="title">Hey, how are you?</span>
+                                    </div>
+                                </li>
+                                <li class="status-offline">
+                                    <figure class="profile-picture">
+                                        <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                                    </figure>
+                                    <div class="profile-info">
+                                        <span class="name">Joseph Doe Junior</span>
+                                        <span class="title">Hey, how are you?</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </aside>*@
+    </section>
+
+    <!-- Vendor -->
+    <script src="~/StaticFiles/Front/vendor/jquery/jquery.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="~/StaticFiles/Front/vendor/popper/umd/popper.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/StaticFiles/Front/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/StaticFiles/Front/vendor/common/common.js"></script>
+    <script src="~/StaticFiles/Front/vendor/nanoscroller/nanoscroller.js"></script>
+    <script src="~/StaticFiles/Front/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="~/StaticFiles/Front/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+    <!-- Specific Page Vendor -->
+    <script src="~/StaticFiles/Front/vendor/autosize/autosize.js"></script>
+    <script src="~/StaticFiles/Front/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/StaticFiles/js/theme.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="~/StaticFiles/js/custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/StaticFiles/js/theme.init.js"></script>
+
+</body>
+</html>
